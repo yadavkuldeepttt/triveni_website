@@ -32,7 +32,7 @@ const AboutSection = () => {
           About Us
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-16 pt-10">
+        <div className="grid md:grid-cols-2 gap-8 mb-16 md:pt-10 pt-6">
           <div className="space-y-6 ">
             <h3 className="text-2xl font-semibold text-yellow-800 tracking-[0.05rem] hover:text-black transition-colors duration-300">
               Your Trusted Travel Partner
