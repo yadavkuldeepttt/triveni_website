@@ -6,6 +6,7 @@ import Header from './components/header';
 import Home from "./pages/home.jsx"
 import Footer from './components/footer.jsx';
 import AboutPage from './pages/about.jsx';
+import ServicesPage from './pages/services.jsx';
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
           <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/about" element={<AboutPage/>} />
+            <Route path="/services" element={<ServicesPage/>} />
             
           </Routes>
           </div>
