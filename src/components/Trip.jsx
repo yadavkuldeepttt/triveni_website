@@ -18,12 +18,12 @@ function Trip() {
           Book Your Ride
         </h2>
 
-        <div className="grid grid-cols-3 border border-gray-300  sm:grid-cols-3   mt-4">
+        <div className="grid grid-cols-3 border border-gray-100  sm:grid-cols-3   mt-4">
           {tripTypes.map(({ id, label, icon: Icon }) => (
             <button
               key={id}
               onClick={() => setTripType(id)}
-              className={`flex border-r border-gray-300 items-center font-semibold text-xl tracking-[0.05rem] justify-center px-3 py-2   ${
+              className={`flex border-r border-gray-100 items-center font-semibold text-xl tracking-[0.05rem] justify-center px-3 py-2   ${
                 tripType === id ? "bg-[#F9D02D]   " : "  bg-white "
               }`}
             >
