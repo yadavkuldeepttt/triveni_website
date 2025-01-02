@@ -17,7 +17,7 @@ const Header = () => {
             </div>
 
             {/* Phone Number */}
-            <div className="hidden md:flex items-center">
+            <div className="hidden md:flex  items-center">
               <div className="flex items-center  border border-black rounded-md">
                 <div className="text-sm text-gray-600 flex items-center  px-2">
                   <Phone className="h-5 w-5 text-gray-700  mr-2" /> <span className="text-gray-700 text-sm">24x7</span>

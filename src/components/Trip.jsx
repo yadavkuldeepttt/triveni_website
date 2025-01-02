@@ -14,7 +14,7 @@ function Trip() {
     <div className=" ">
       {/* Trip Type Selection */}
       <div className="md:mx-[9rem]">
-        <h2 className="text-2xl text-center font-semibold my-6">
+        <h2 className="text-3xl text-center tracking-[0.06rem] font-semibold pt-14 pb-12">
           Book Your Ride
         </h2>
 
@@ -36,75 +36,77 @@ function Trip() {
 
       {/* Booking Form Fields */}
       <div className="w-full  mx-auto p-6 bg-[#FFFCD1]">
-      <div className="flex flex-col lg:flex-row lg:items-end gap-6">
-        {/* Pickup Location */}
-        <div className="flex-1">
-          <label className="block text-start text-sm font-semibold text-gray-700 mb-2">
-            Pickup Point
-          </label>
-          <div className="relative">
-            <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-500 w-5 h-5" />
-            <input
-              type="text"
-              className="pl-10 w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-gray-600 placeholder-gray-400 bg-white hover:bg-gray-50 focus:bg-white"
-              placeholder="Enter pickup location"
-            />
+        <div className="flex flex-col lg:flex-row lg:items-end gap-6">
+          {/* Pickup Location */}
+          <div className="flex-1">
+            <label className="block text-start text-[16px] tracking-[0.06rem] uppercase font-semibold text-gray-800 mb-2">
+              Pickup Point
+            </label>
+            <div className="relative">
+              <input
+                type="text"
+                className=" w-full py-3 border-b-2 text-sm tracking-[0.06rem] border-black bg-transparent focus:outline-none"
+                placeholder="Enter pickup location"
+              />
+            </div>
           </div>
-        </div>
 
-        {/* Destination */}
-        <div className="flex-1">
-          <label className="block text-start text-sm font-semibold text-gray-700 mb-2">
-            Destination
-          </label>
-          <div className="relative">
-            <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-500 w-5 h-5" />
-            <input
-              type="text"
-              className="pl-10 w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-gray-600 placeholder-gray-400 bg-white hover:bg-gray-50 focus:bg-white"
-              placeholder="Enter destination"
-            />
+          {/* Destination */}
+          <div className="flex-1">
+            <label className="block text-start text-[16px] tracking-[0.06rem] uppercase font-semibold text-gray-800 mb-2">
+              Destination
+            </label>
+            <div className="relative">
+              <input
+                type="text"
+                className=" w-full py-3 border-b-2 text-sm tracking-[0.06rem] border-black bg-transparent focus:outline-none"
+                placeholder="Enter destination"
+              />
+            </div>
           </div>
-        </div>
 
-        {/* Date Picker */}
-        <div className="flex-1">
-          <label className="block text-start text-lg tracking-[0.06rem] uppercase font-semibold text-gray-700 mb-2">
-            Pickup Date
-          </label>
-          <div className="relative">
-            <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-500 w-5 h-5" />
-            <input
-              type="date"
-              className="pl-10 w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-gray-600 bg-white hover:bg-gray-50 focus:bg-white"
-            />
+          {/* Date Picker */}
+          <div className="flex-1">
+            <label className="block text-start text-[16px] tracking-[0.06rem] uppercase font-semibold text-gray-800 mb-2">
+              Pickup Date
+            </label>
+            <div className="relative">
+              <input
+                type="date"
+                className=" w-full py-3 border-b-2 text-sm tracking-[0.06rem] border-black bg-transparent focus:outline-none"
+              />
+            </div>
           </div>
-        </div>
 
-        {/* Time Picker */}
-        <div className="flex-1">
-          <label className="block text-start text-lg tracking-[0.06rem] uppercase font-semibold text-gray-800 mb-2">
-            Pick up Time
-          </label>
-          <div className="relative">
-            <Clock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-500 w-5 h-5" />
-            <input
-              type="time"
-              className="pl-10 w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-gray-600 bg-white hover:bg-gray-50 focus:bg-white"
-            />
+          {/* Time Picker */}
+          <div className="flex-1">
+            <label className="block text-start text-[16px] tracking-[0.06rem] uppercase font-semibold text-gray-800 mb-2">
+              Pick up Time
+            </label>
+            <div className="relative">
+              <input
+                type="time"
+                className=" w-full py-3 border-b-2 text-sm tracking-[0.06rem] border-black bg-transparent focus:outline-none"
+              />
+            </div>
           </div>
-        </div>
 
-        {/* Search Button */}
-        {/* <div className="lg:ml-4 flex-none">
+          {/* Search Button */}
+          {/* <div className="lg:ml-4 flex-none">
           <button className="w-full lg:w-auto bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium whitespace-nowrap">
             Search Rides
           </button>
         </div> */}
+        </div>
+
+        {/* explore cab button */}
+
+        <div className="flex items-center justify-center mt-8">
+          <button className="bg-black text-white rounded-md uppercase px-9 py-2 text-sm tracking-[0.06rem] rounded-md hover:text-yellow-400 transition">
+            Book Now!
+          </button>
+        </div>
       </div>
-    </div>
-
-
     </div>
   );
 }

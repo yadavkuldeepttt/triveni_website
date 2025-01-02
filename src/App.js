@@ -4,6 +4,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router";
 import Header from './components/header';
 import Home from "./pages/home.jsx"
+import Footer from './components/footer.jsx';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
             <Route path="/" element={<Home/>} />
           </Routes>
           </div>
+          <Footer/>
       </div>
     );
   }
