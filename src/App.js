@@ -7,17 +7,21 @@ import Home from "./pages/home.jsx"
 import Footer from './components/footer.jsx';
 import AboutPage from './pages/about.jsx';
 import ServicesPage from './pages/services.jsx';
+import Contact from './pages/contact.jsx';
+import Destination from './pages/destination.jsx';
 
 class App extends Component {
   render() {
     return (
       <div className="App ">
             <Header/>
-          <div className='px-2 '>
+          <div className=''>
           <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/about" element={<AboutPage/>} />
             <Route path="/services" element={<ServicesPage/>} />
+            <Route path="/contact" element={<Contact/>} />
+            <Route path="/destinations" element={<Destination/>} />
             
           </Routes>
           </div>

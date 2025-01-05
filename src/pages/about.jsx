@@ -1,12 +1,16 @@
 import React from "react";
 import { MapPin, Car, Clock, Phone, ChevronRight } from "lucide-react";
+import { useNavigate } from "react-router";
 
 const AboutPage = () => {
+  const navigate = useNavigate();
+
   const features = [
     {
       icon: Car,
       title: "Quality Fleet",
-      description: "Modern, well-maintained vehicles for your comfort and safety",
+      description:
+        "Modern, well-maintained vehicles for your comfort and safety",
     },
     {
       icon: Clock,
@@ -27,25 +31,33 @@ const AboutPage = () => {
 
   return (
     <div className="bg-gradient-to-b from-yellow-100 to-white min-h-screen">
-             {/* Breadcrumb Section */}
-             <nav className="flex text-sm text-gray-600 py-8 ps-20" aria-label="Breadcrumb">
+      {/* Breadcrumb Section */}
+      <nav
+        className="relative bg-cover bg-center bg-no-repeat text-sm text-gray-600 py-[7rem] "
+        aria-label="Breadcrumb"
+        style={{
+          backgroundImage: "url('/images/about/about_banner.jpg')",
+        }}
+      >
+        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4">
           <ol className="inline-flex items-center space-x-1 md:space-x-3">
             <li className="inline-flex items-center">
-              <a href="/" className="text-gray-600 hover:text-yellow-600">
+              <a href="/" className="text-white hover:text-yellow-600">
                 Home
               </a>
             </li>
             <li>
-              <div className="flex items-center font-semibold ">
-                <ChevronRight className="w-4 h-4 mx-2 text-gray-500" />
-                <span className="text-yellow-800">About Us</span>
+              <div className="flex items-center font-semibold">
+                <ChevronRight className="w-4 h-4 mx-2 text-white" />
+                <span className="text-yellow-400 text-xl">About Us</span>
               </div>
             </li>
           </ol>
-        </nav>
-      <div className="max-w-7xl mx-auto px-4 py-16">
-   
+        </div>
+      </nav>
 
+      <div className="max-w-7xl mx-auto px-4 py-16">
         {/* Intro Section */}
         <div className="grid md:grid-cols-2 gap-12 mb-16">
           <div className="space-y-6">
@@ -64,7 +76,10 @@ const AboutPage = () => {
                 Learn More
                 <ChevronRight className="w-5 h-5 ml-2" />
               </button>
-              <button className="border-2 border-yellow-600 text-yellow-600 px-6 py-3 rounded-md hover:bg-yellow-600 hover:text-white transition-all duration-300 flex items-center">
+              <button
+                onClick={() => navigate("/contact")}
+                className="border-2 border-yellow-600 text-yellow-600 px-6 py-3 rounded-md hover:bg-yellow-600 hover:text-white transition-all duration-300 flex items-center"
+              >
                 Contact Us
                 <ChevronRight className="w-5 h-5 ml-2" />
               </button>
@@ -92,9 +107,7 @@ const AboutPage = () => {
               <h3 className="text-lg font-semibold text-yellow-800 text-center mb-2">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 text-center">
-                {feature.description}
-              </p>
+              <p className="text-gray-600 text-center">{feature.description}</p>
             </div>
           ))}
         </div>

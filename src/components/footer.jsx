@@ -28,6 +28,29 @@ const Footer = () => {
 
   return (
     <footer className="bg-black text-gray-300">
+          {/* Newsletter Section */}
+          <section className="bg-black py-16 border-b border-gray-500 px-4">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
+          <div className="mb-8 md:mb-0">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Get Travel Updates
+            </h2>
+            <p className="text-gray-400">
+              Subscribe to our newsletter for exclusive deals and travel tips
+            </p>
+          </div>
+          <div className="flex gap-4">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="px-6 py-3 rounded-lg bg-white/10 text-white placeholder-gray-400 backdrop-blur-sm border border-white/20 focus:outline-none focus:border-yellow-500"
+            />
+            <button className="px-6 py-3 bg-yellow-500 text-black font-semibold rounded-lg hover:bg-yellow-400 transition-colors">
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </section>
       {/* Top Section */}
       <div className="border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 py-12">

@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import { Phone, ChevronDown, Menu, X } from "lucide-react";
+import AuthModal from "./auth";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
   return (
-    <div>
-      <header className="bg-[#FACF2D] shadow-sm">
+    <div className="sticky top-0 z-50 w-full">
+      <header className="bg-[#FACF2D] shadow-sm ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center ">
             {/* Logo */}
@@ -38,20 +40,22 @@ const Header = () => {
 
             {/* Navigation Links */}
             <nav className="hidden md:flex items-center space-x-5">
-              <a href="/" className="nav-link">Home</a>
+              <a href="/" className="nav-link">
+                Home
+              </a>
               <div className="relative group">
                 <a href="/about" className="nav-link flex items-center">
-                  About <ChevronDown className="w-4 h-4 ml-1" />
+                  About
                 </a>
               </div>
               <div className="relative group">
                 <a href="/services" className="nav-link flex items-center">
-                  Services <ChevronDown className="w-4 h-4 ml-1" />
+                  Services
                 </a>
               </div>
               <div className="relative group">
                 <a href="/destinations" className="nav-link flex items-center">
-                  Destinations <ChevronDown className="w-4 h-4 ml-1" />
+                  Destinations
                 </a>
               </div>
             </nav>
@@ -67,7 +71,10 @@ const Header = () => {
                   090 4545 0000
                 </div>
               </div>
-              <button className="bg-black text-white rounded-full px-3 py-2 text-xs tracking-[0.06rem] hover:bg-gray-800 hover:text-[#FACF2D] transition-all duration-300">
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="bg-black text-white rounded-full px-3 py-2 text-xs tracking-[0.06rem] hover:bg-gray-800 hover:text-[#FACF2D] transition-all duration-300"
+              >
                 Login
               </button>
             </div>
@@ -86,27 +93,48 @@ const Header = () => {
               <X className="h-5 w-5" />
             </button>
             <nav className="flex mt-10 flex-col space-y-4">
-              <a href="/" className="text-gray-700 hover:text-yellow-600 font-semibold">
+              <a
+                href="/"
+                className="text-gray-700 hover:text-yellow-600 font-semibold"
+              >
                 Home
               </a>
-              <a href="/about" className="text-gray-700 hover:text-yellow-600 font-semibold">
+              <a
+                href="/about"
+                className="text-gray-700 hover:text-yellow-600 font-semibold"
+              >
                 About
               </a>
-              <a href="/services" className="text-gray-700 hover:text-yellow-600 font-semibold">
+              <a
+                href="/services"
+                className="text-gray-700 hover:text-yellow-600 font-semibold"
+              >
                 Services
               </a>
-              <a href="/destinations" className="text-gray-700 hover:text-yellow-600 font-semibold">
+              <a
+                href="/destinations"
+                className="text-gray-700 hover:text-yellow-600 font-semibold"
+              >
                 Destinations
               </a>
-              <a href="/contact" className="text-gray-700 hover:text-yellow-600 font-semibold">
+              <a
+                href="/contact"
+                className="text-gray-700 hover:text-yellow-600 font-semibold"
+              >
                 Contact
               </a>
             </nav>
-            <button className="bg-black mt-10 text-white rounded-full px-10 py-2 text-xs tracking-[0.06rem] hover:bg-gray-800 hover:text-[#FACF2D] transition-all duration-300">
-                Login
-              </button>
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="bg-black mt-10 text-white rounded-full px-10 py-2 text-xs tracking-[0.06rem] hover:bg-gray-800 hover:text-[#FACF2D] transition-all duration-300"
+            >
+              Login
+            </button>
           </div>
         </div>
+      )}
+      {isModalOpen && (
+        <AuthModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       )}
 
       <style jsx>{`
