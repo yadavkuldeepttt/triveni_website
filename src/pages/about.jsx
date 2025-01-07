@@ -72,13 +72,13 @@ const AboutPage = () => {
               ensure your travel is smooth, affordable, and enjoyable.
             </p>
             <div className="flex w-full justify-center space-x-4 md:pt-10 pt-5">
-              <button className="bg-yellow-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-yellow-700 transition-all duration-300 flex items-center">
+              <button className="bg-yellow-600 text-white px-6 py-3 max-sm:text-sm max-sm:px-2.5 max-sm:py-1.5 rounded-md shadow-md hover:bg-yellow-700 transition-all duration-300 flex items-center">
                 Learn More
                 <ChevronRight className="w-5 h-5 ml-2" />
               </button>
               <button
                 onClick={() => navigate("/contact")}
-                className="border-2 border-yellow-600 text-yellow-600 px-6 py-3 rounded-md hover:bg-yellow-600 hover:text-white transition-all duration-300 flex items-center"
+                className="border-2 border-yellow-600 text-yellow-600 px-6 py-3 max-sm:text-sm max-sm:px-2.5 max-sm:py-1.5 rounded-md hover:bg-yellow-600 hover:text-white transition-all duration-300 flex items-center"
               >
                 Contact Us
                 <ChevronRight className="w-5 h-5 ml-2" />

@@ -3,6 +3,7 @@ import Trip from "../components/Trip";
 import AboutSection from "../components/aboutUs";
 import ServicesSection from "../components/services";
 import { motion } from "framer-motion";
+import WhatsAppFloat from "../components/whatsappFloat";
 
 const Home = () => {
   useEffect(() => {
@@ -95,7 +96,7 @@ const Home = () => {
         {/* Call to Action Section */}
         <div className="bg-gradient-to-b from-[#FACF2D] to-[#FFFCD1] py-16">
           <div className="max-w-7xl mx-auto px-4 text-center">
-            <h3 className="text-3xl font-semibold mb-4 text-yellow-800">
+            <h3 className="text-3xl max-sm:text-2xl font-semibold mb-4 text-yellow-800">
               Ready to Explore? Book Your Trip Today!
             </h3>
             <p className="text-lg text-gray-700 mb-8">
@@ -108,6 +109,7 @@ const Home = () => {
           </div>
         </div>
       </motion.div>
+      <WhatsAppFloat phoneNumber="YOUR_PHONE_NUMBER" />
     </motion.div>
   );
 };

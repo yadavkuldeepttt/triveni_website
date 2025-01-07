@@ -32,14 +32,14 @@ const Footer = () => {
           <section className="bg-black py-16 border-b border-gray-500 px-4">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
           <div className="mb-8 md:mb-0">
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl max-sm:text-2xl font-bold text-white mb-4">
               Get Travel Updates
             </h2>
-            <p className="text-gray-400">
+            <p className="text-gray-400 max-sm:text-sm">
               Subscribe to our newsletter for exclusive deals and travel tips
             </p>
           </div>
-          <div className="flex gap-4">
+          <div className="flex gap-4 max-sm:flex-col">
             <input
               type="email"
               placeholder="Enter your email"
@@ -51,6 +51,7 @@ const Footer = () => {
           </div>
         </div>
       </section>
+
       {/* Top Section */}
       <div className="border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 py-12">
@@ -75,7 +76,7 @@ const Footer = () => {
             </div>
 
             {/* Quick Links */}
-            <div className="md:ps-5">
+            <div className="md:ps-5 ">
               <h3 className="text-white  text-start font-semibold mb-6">Quick Links</h3>
               <ul className="space-y-3">
                 {quickLinks.map((link) => (
