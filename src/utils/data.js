@@ -1,4 +1,4 @@
-import { Car } from "lucide-react";
+import { Car ,Clock,MapPin,Phone} from "lucide-react";
 
 export const vehicles = [
   {
