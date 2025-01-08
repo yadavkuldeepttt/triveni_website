@@ -1,33 +1,12 @@
 import React from "react";
 import { MapPin, Car, Clock, Phone, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router";
+import { features } from "../utils/data";
 
 const AboutPage = () => {
   const navigate = useNavigate();
 
-  const features = [
-    {
-      icon: Car,
-      title: "Quality Fleet",
-      description:
-        "Modern, well-maintained vehicles for your comfort and safety",
-    },
-    {
-      icon: Clock,
-      title: "24/7 Service",
-      description: "Round-the-clock availability for all your travel needs",
-    },
-    {
-      icon: MapPin,
-      title: "Wide Coverage",
-      description: "Serving major cities and tourist destinations nationwide",
-    },
-    {
-      icon: Phone,
-      title: "Easy Booking",
-      description: "Quick and hassle-free reservation process",
-    },
-  ];
+ 
 
   return (
     <div className="bg-gradient-to-b from-yellow-100 to-white min-h-screen">
@@ -54,6 +33,9 @@ const AboutPage = () => {
               </div>
             </li>
           </ol>
+          <h1 className="text-3xl tracking-[0.06rem] md:text-3xl font-bold text-white mt-8">
+            Connecting Dreams with Destinations.
+          </h1>
         </div>
       </nav>
 

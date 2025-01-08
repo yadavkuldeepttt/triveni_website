@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Trip from "../components/Trip";
 import AboutSection from "../components/aboutUs";
-import ServicesSection from "../components/services";
+import ServicesSection from "../components/services/services";
 import { motion } from "framer-motion";
 import WhatsAppFloat from "../components/whatsappFloat";
 
