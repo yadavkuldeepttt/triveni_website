@@ -3,7 +3,6 @@ import Trip from "../components/Trip";
 import AboutSection from "../components/aboutUs";
 import ServicesSection from "../components/services/services";
 import { motion } from "framer-motion";
-import WhatsAppFloat from "../components/whatsappFloat";
 
 const Home = () => {
   useEffect(() => {
@@ -109,7 +108,6 @@ const Home = () => {
           </div>
         </div>
       </motion.div>
-      <WhatsAppFloat phoneNumber="YOUR_PHONE_NUMBER" />
     </motion.div>
   );
 };

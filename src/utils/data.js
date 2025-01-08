@@ -1,4 +1,12 @@
-import { Car } from "lucide-react";
+import {
+  Car,
+  Clock,
+  CreditCard,
+  MapPin,
+  Package,
+  Phone,
+  Users,
+} from "lucide-react";
 
 export const vehicles = [
   {
@@ -102,7 +110,6 @@ export const tourDetails = {
   },
 };
 
-
 export const tourPackages = [
   {
     title: "Manali Tour from Mumbai",
@@ -156,13 +163,11 @@ export const tourPackages = [
   },
 ];
 
-
-export  const features = [
+export const features = [
   {
     icon: Car,
     title: "Quality Fleet",
-    description:
-      "Modern, well-maintained vehicles for your comfort and safety",
+    description: "Modern, well-maintained vehicles for your comfort and safety",
   },
   {
     icon: Clock,
@@ -178,5 +183,121 @@ export  const features = [
     icon: Phone,
     title: "Easy Booking",
     description: "Quick and hassle-free reservation process",
+  },
+];
+
+export const services = [
+  {
+    icon: <Car className="w-5 h-5 md:w-6 md:h-6" />,
+    title: "Vehicles",
+    description: "Wide range of comfortable and reliable vehicles",
+    items: ["Luxury Cars", "SUVs", "Tempo Traveller", "Mini Bus"],
+  },
+  {
+    icon: <Users className="w-5 h-5 md:w-6 md:h-6" />,
+    title: "Tour Guide",
+    description: "Expert guides for an enriching experience",
+    items: [
+      "Local Experts",
+      "Multilingual Guides",
+      "Cultural Insights",
+      "Custom Tours",
+    ],
+  },
+  {
+    icon: <Package className="w-5 h-5 md:w-6 md:h-6" />,
+    title: "Tour Packages",
+    description: "Curated experiences for every traveler",
+    items: [
+      "City Tours",
+      "Adventure Trips",
+      "Cultural Tours",
+      "Weekend Getaways",
+    ],
+  },
+];
+
+export const vehiclesServices = [
+  {
+    type: "Sedan",
+    image: "/images/car/car1.png",
+    seating: "4 passengers",
+    baseFare: "₹500",
+    perKm: "₹12/km",
+    driverCharges: "₹300/day",
+    perDay: "₹2000",
+    facilities: ["AC", "Music System", "Charging Point", "First Aid Kit"],
+    bestFor: ["Small families", "Business trips", "Airport transfers"],
+  },
+  {
+    type: "SUV",
+    image: "/images/car/car2.png",
+    seating: "6-7 passengers",
+    baseFare: "₹800",
+    perKm: "₹15/km",
+    driverCharges: "₹400/day",
+    perDay: "₹3000",
+    facilities: [
+      "AC",
+      "Music System",
+      "Charging Point",
+      "Extra Legroom",
+      "Luggage Space",
+    ],
+    bestFor: ["Large families", "Group tours", "Long distance"],
+  },
+  {
+    type: "Tempo Traveller",
+    image: "/images/car/car1.png",
+    seating: "12-15 passengers",
+    baseFare: "₹1500",
+    perKm: "₹18/km",
+    driverCharges: "₹500/day",
+    perDay: "₹4500",
+    facilities: [
+      "AC",
+      "Push-back Seats",
+      "LCD TV",
+      "Audio System",
+      "Charging Points",
+    ],
+    bestFor: ["Tourist groups", "Corporate events", "Wedding parties"],
+  },
+  {
+    type: "Luxury Bus",
+    image: "/images/car/car2.png",
+    seating: "30-35 passengers",
+    baseFare: "₹3000",
+    perKm: "₹25/km",
+    driverCharges: "₹800/day",
+    perDay: "₹8000",
+    facilities: [
+      "AC",
+      "Push-back Seats",
+      "LCD TV",
+      "Audio System",
+      "Washroom",
+      "Refrigerator",
+    ],
+    bestFor: ["Large groups", "Extended tours", "Luxury travel"],
+  },
+];
+
+export const bookingSteps = [
+  {
+    icon: <Car className="w-8 h-8" />,
+    title: "Choose Vehicle",
+    description:
+      "Select the perfect vehicle based on your group size and requirements",
+  },
+  {
+    icon: <CreditCard className="w-8 h-8" />,
+    title: "Book & Pay",
+    description: "Secure your booking with easy online payment options",
+  },
+  {
+    icon: <Phone className="w-8 h-8" />,
+    title: "Confirmation",
+    description: "Receive instant booking confirmation and driver details",
   },
 ];

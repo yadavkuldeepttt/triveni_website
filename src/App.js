@@ -11,6 +11,8 @@ import Contact from "./pages/contact.jsx";
 import Destination from "./pages/destination.jsx";
 import TourPackageDetails from "./components/services/tourPackageDetails.jsx";
 import BookingForm from "./components/services/bookingForm.jsx";
+import WhatsAppFloat from "./components/whatsappFloat.jsx"
+
 
 class App extends Component {
   render() {
@@ -32,6 +34,7 @@ class App extends Component {
             <Route path="/tour-package/:slug/book" element={<BookingForm />} />
           </Routes>
         </div>
+              <WhatsAppFloat phoneNumber="YOUR_PHONE_NUMBER" />
         <Footer />
       </div>
     );

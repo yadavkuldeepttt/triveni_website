@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Star,
   Calendar,
@@ -9,34 +9,53 @@ import {
   ChevronRight,
   Car,
   Users,
+  Map,
   Package,
   ChevronLeft,
 } from "lucide-react";
 import { useNavigate, Link } from "react-router";
-import { services, tourPackages, vehicles } from "../utils/data";
-import VehicleServices from "../components/services/VehicleServices";
+import { tourPackages, vehicles } from "../utils/data";
 
 const ServicesPage = () => {
   const navigate = useNavigate();
+
+  const services = [
+    {
+      icon: <Car className="w-6 h-6" />,
+      title: "Vehicles",
+      description: "Wide range of comfortable and reliable vehicles",
+      items: ["Luxury Cars", "SUVs", "Tempo Traveller", "Mini Bus"],
+    },
+    {
+      icon: <Users className="w-6 h-6" />,
+      title: "Tour Guide",
+      description: "Expert guides for an enriching experience",
+      items: [
+        "Local Experts",
+        "Multilingual Guides",
+        "Cultural Insights",
+        "Custom Tours",
+      ],
+    },
+    {
+      icon: <Package className="w-6 h-6" />,
+      title: "Tour Packages",
+      description: "Curated experiences for every traveler",
+      items: [
+        "City Tours",
+        "Adventure Trips",
+        "Cultural Tours",
+        "Weekend Getaways",
+      ],
+    },
+  ];
+
+  
+
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [visibleSlides, setVisibleSlides] = useState(3);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 640) setVisibleSlides(1);
-      else if (window.innerWidth < 1024) setVisibleSlides(2);
-      else setVisibleSlides(3);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const nextSlide = () => {
-    setCurrentIndex((prev) =>
-      Math.min(prev + 1, tourPackages.length - visibleSlides)
-    );
+    setCurrentIndex((prev) => Math.min(prev + 1, tourPackages.length - 3));
   };
 
   const prevSlide = () => {
@@ -45,10 +64,13 @@ const ServicesPage = () => {
 
   return (
     <div className="min-h-screen">
+      {/* Hero Banner */}
       <nav
-        className="relative bg-cover bg-center bg-no-repeat py-20 md:py-32"
+        className="relative bg-cover bg-center bg-no-repeat text-sm text-gray-600 py-32"
         aria-label="Breadcrumb"
-        style={{ backgroundImage: "url('/images/about/about_banner.jpg')" }}
+        style={{
+          backgroundImage: "url('/images/about/about_banner.jpg')",
+        }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4">
@@ -61,47 +83,38 @@ const ServicesPage = () => {
             <li>
               <div className="flex items-center font-semibold">
                 <ChevronRight className="w-4 h-4 mx-2 text-white" />
-                <span className="text-yellow-400 text-lg md:text-xl">
-                  Services
-                </span>
+                <span className="text-yellow-400 text-xl">Services</span>
               </div>
             </li>
           </ol>
-          <h1 className="text-2xl md:text-3xl font-bold text-white mt-6 md:mt-8">
-            Our Services, Your Comfort.
+          <h1 className="text-3xl tracking-[0.06rem] md:text-3xl font-bold text-white mt-8">
+          Our Services, Your Comfort.
           </h1>
         </div>
       </nav>
 
-      {/* all services */}
-      <section className="bg-gradient-to-b from-white to-yellow-100 py-8 md:py-16">
+      {/* All Services Section */}
+      <section className="bg-gradient-to-b from-white to-yellow-100 py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">
-            All Services
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <h2 className="text-3xl font-bold text-center mb-12">All Services</h2>
+          <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-white p-4 md:p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+                className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
               >
                 <div className="flex items-center mb-4">
                   <div className="p-2 bg-yellow-100 rounded-lg">
                     {service.icon}
                   </div>
-                  <h3 className="text-lg md:text-xl font-semibold ml-3">
+                  <h3 className="text-xl font-semibold ml-3">
                     {service.title}
                   </h3>
                 </div>
-                <p className="text-gray-600 text-sm md:text-base mb-4">
-                  {service.description}
-                </p>
+                <p className="text-gray-600 mb-4">{service.description}</p>
                 <ul className="space-y-2">
                   {service.items.map((item, i) => (
-                    <li
-                      key={i}
-                      className="flex items-center text-xs md:text-sm"
-                    >
+                    <li key={i} className="flex items-center text-sm">
                       <Star className="w-4 h-4 text-yellow-400 mr-2" />
                       {item}
                     </li>
@@ -113,67 +126,61 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* vehicles services */}
-      <VehicleServices />
-
-      {/* tour packages */}
-      <section className="py-8 md:py-16 bg-gradient-to-b from-white to-[#FFFCD1]">
+      {/* featured tour packages */}
+      <section className="py-16 bg-gradient-to-b from-white to-[#FFFCD1]">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl text-center font-semibold mb-8 md:mb-12">
+          <h2 className="text-3xl text-center font-semibold mb-12">
             Featured Tour Packages
           </h2>
+
           <div className="relative">
             {currentIndex > 0 && (
               <button
                 onClick={prevSlide}
-                className="absolute -left-2 md:-left-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 p-1.5 md:p-2 rounded-full text-white hover:bg-[#FACF2D] hover:text-black transition-all"
+                className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 p-2 rounded-full text-white hover:bg-[#FACF2D] hover:text-black transition-all"
               >
-                <ChevronLeft className="w-4 h-4 md:w-6 md:h-6" />
+                <ChevronLeft className="w-6 h-6" />
               </button>
             )}
-            {currentIndex < tourPackages.length - visibleSlides && (
+
+            {currentIndex < tourPackages.length - 3 && (
               <button
                 onClick={nextSlide}
-                className="absolute -right-2 md:-right-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 p-1.5 md:p-2 rounded-full text-white hover:bg-[#FACF2D] hover:text-black transition-all"
+                className="absolute -right-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 p-2 rounded-full text-white hover:bg-[#FACF2D] hover:text-black transition-all"
               >
-                <ChevronRight className="w-4 h-4 md:w-6 md:h-6" />
+                <ChevronRight className="w-6 h-6" />
               </button>
             )}
+
             <div className="overflow-hidden">
               <div
                 className="flex transition-transform duration-500 ease-out"
                 style={{
-                  transform: `translateX(-${
-                    currentIndex * (100 / visibleSlides)
-                  }%)`,
+                  transform: `translateX(-${currentIndex * (100 / 3)}%)`,
                 }}
               >
                 {tourPackages.map((pkg, index) => (
-                  <div
-                    key={index}
-                    className={`w-full ${
-                      visibleSlides === 2 ? "sm:w-1/2" : "lg:w-1/3"
-                    } flex-shrink-0 px-2 md:px-4`}
-                  >
+                  <div key={index} className="w-1/3 flex-shrink-0 px-4">
                     <div className="bg-white rounded-lg shadow-xl overflow-hidden hover:-translate-y-2 transition-all duration-300">
                       <div className="relative">
                         <img
                           src={pkg.image}
                           alt={pkg.title}
-                          className="w-full h-40 md:h-48 object-cover"
+                          className="w-full h-48 object-cover"
                         />
-                        <div className="absolute top-2 md:top-4 right-2 md:right-4 bg-[#FACF2D] text-black px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-semibold">
+                        <div className="absolute top-4 right-4 bg-[#FACF2D] text-black px-3 py-1 rounded-full text-sm font-semibold">
                           {pkg.category}
                         </div>
                       </div>
-                      <div className="p-4 md:p-6">
-                        <h3 className="text-lg md:text-xl font-semibold mb-2">
+                      <div className="p-6">
+                        <h3 className="text-xl font-semibold mb-2">
                           {pkg.title}
                         </h3>
-                        <div className="text-xl md:text-2xl font-bold text-[#FACF2D] mb-3">
+                        <div className="text-2xl font-bold text-[#FACF2D] mb-3">
                           {pkg.price}
                         </div>
-                        <div className="space-y-2 text-gray-600 text-xs md:text-sm">
+
+                        <div className="space-y-2 text-gray-600 text-sm">
                           <div className="flex items-center">
                             <Calendar className="w-4 h-4 mr-2 text-[#FACF2D]" />
                             <span>{pkg.duration}</span>
@@ -189,8 +196,9 @@ const ServicesPage = () => {
                             <span>Departure: {pkg.departureDate}</span>
                           </div>
                         </div>
-                        <div className="mt-4 md:mt-6 flex gap-2">
-                          <button className="flex-1 bg-black text-white rounded-md py-1.5 md:py-2 text-xs md:text-sm font-semibold hover:bg-[#FACF2D] hover:text-black transition-all duration-300">
+
+                        <div className="mt-6 flex gap-2">
+                          <button className="flex-1 bg-black text-white rounded-md py-2 text-sm font-semibold hover:bg-[#FACF2D] hover:text-black transition-all duration-300">
                             Book Now
                           </button>
                           <Link
@@ -199,7 +207,7 @@ const ServicesPage = () => {
                               .replace(/ /g, "-")}`}
                             className="flex-1"
                           >
-                            <button className="w-full border-2 border-[#FACF2D] text-black rounded-md py-1.5 md:py-2 text-xs md:text-sm font-semibold hover:bg-[#FACF2D] transition-all duration-300">
+                            <button className="w-full border-2 border-[#FACF2D] text-black rounded-md py-2 text-sm font-semibold hover:bg-[#FACF2D] transition-all duration-300">
                               View Details
                             </button>
                           </Link>
@@ -214,13 +222,13 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* vehicles and pricing */}
-      <section className="bg-gradient-to-b from-white to-yellow-50 py-8 md:py-16">
+      {/* Vehicles and Pricing Section */}
+      <section className="bg-gradient-to-b from-white to-yellow-50 py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">
+          <h2 className="text-3xl font-bold text-center mb-12">
             Our Vehicles & Pricing
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {vehicles.map((vehicle, index) => (
               <div
                 key={index}
@@ -230,26 +238,26 @@ const ServicesPage = () => {
                   <img
                     src={vehicle.image}
                     alt={vehicle.name}
-                    className="w-full h-48 md:h-[40vh] object-contain object-center group-hover:opacity-80"
+                    className="w-full h-[40vh] object-contain object-center group-hover:opacity-80"
                   />
-                  <div className="absolute top-4 left-4 text-white font-bold text-xs md:text-sm bg-black px-3 md:px-4 py-1 md:py-1.5 rounded-full">
+                  <div className="absolute top-4 left-4 text-white font-bold text-sm bg-black  px-4 py-1.5 rounded-full">
                     {vehicle.price}
                   </div>
                 </div>
-                <div className="bg-[#facf2d87] py-3 md:py-4 px-4 md:px-6">
+                <div className="bg-[#facf2d87] py-4 px-6">
                   <div className="flex items-center mb-2">
-                    <div className="p-1.5 md:p-2 bg-yellow-100 rounded-lg">
+                    <div className="p-2 bg-yellow-100 rounded-lg">
                       {vehicle.icon}
                     </div>
-                    <h3 className="text-base md:text-lg font-semibold ml-3">
+                    <h3 className="text-lg font-semibold ml-3">
                       {vehicle.title}
                     </h3>
                   </div>
-                  <p className="text-gray-600 text-xs md:text-sm text-start mt-2">
+                  <p className="text-gray-600 text-sm text-start mt-2">
                     {vehicle.description}
                   </p>
-                  <div className="py-2 text-end">
-                    <button className="w-fit px-3 mt-2 md:mt-3 bg-black text-white rounded-md py-1.5 md:py-2 text-xs md:text-sm hover:bg-yellow-400 hover:text-black transition-all">
+                  <div className="py-2  text-end">
+                    <button className="w-fit px-3 mt-3  bg-black text-white rounded-md py-2 hover:bg-yellow-400 hover:text-black transition-all">
                       Book Now
                     </button>
                   </div>
@@ -260,18 +268,18 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* ready to start journey */}
-      <section className="bg-gradient-to-b from-[#FACF2D] to-[#FFFCD1] py-8 md:py-16">
+      {/* Call to Action */}
+      <section className="bg-gradient-to-b from-[#FACF2D] to-[#FFFCD1] py-16">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">
+          <h2 className="text-3xl font-bold mb-4">
             Ready to Start Your Journey?
           </h2>
-          <p className="mb-6 md:mb-8 tracking-[0.07rem] text-gray-700 text-sm md:text-base">
+          <p className="mb-8 tracking-[0.07rem] text-gray-700">
             Contact us today to customize your perfect travel experience
           </p>
           <button
             onClick={() => navigate("/contact")}
-            className="bg-yellow-400 text-black px-6 md:px-8 py-2 md:py-3 rounded-md text-sm md:text-base font-semibold hover:bg-yellow-500 transition-colors"
+            className="bg-yellow-400 text-black px-8 py-3 rounded-md font-semibold hover:bg-yellow-500 transition-colors"
           >
             Contact Us
           </button>
