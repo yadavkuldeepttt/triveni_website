@@ -1,20 +1,12 @@
 import React, { useState, useEffect } from "react";
 import {
   Star,
-  Calendar,
-  MapPin,
-  Briefcase,
-  Coffee,
-  User,
   ChevronRight,
-  Car,
-  Users,
-  Package,
-  ChevronLeft,
+
 } from "lucide-react";
-import { useNavigate, Link } from "react-router";
-import { services, tourPackages, vehicles } from "../utils/data";
-import VehicleServices from "../components/services/vehicleServices";
+import { useNavigate } from "react-router";
+import { services,  } from "../utils/data";
+import VehicleServices from "../components/services/VehicleServices";
 import TourPackage from "../components/services/tourPackage";
 
 const ServicesPage = () => {
