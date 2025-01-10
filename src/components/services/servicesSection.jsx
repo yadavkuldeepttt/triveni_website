@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Star } from "lucide-react";
-import { Link } from "react-router";
-import { services, tourPackages, vehicles } from "../../utils/data";
+import { services } from "../../utils/data";
 import VehicleServices from "./VehicleServices";
 import LocationsSection from "./locationSection";
 import TourPackage from "./tourPackage";
