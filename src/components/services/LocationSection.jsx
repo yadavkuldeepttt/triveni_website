@@ -5,7 +5,7 @@ import {
   Car,
   Search,
   ChevronRight,
-  ChevronLeft,
+  ChevronLeft
 } from "lucide-react";
 import { cities } from "../../utils/data";
 import LocationSectionDetails from "./details/locationSectionDetails";

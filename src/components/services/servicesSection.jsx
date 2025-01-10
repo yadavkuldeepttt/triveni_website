@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Star } from "lucide-react";
 import { services } from "../../utils/data";
 import VehicleServices from "./VehicleServices";
-import LocationSection from "./locationSection";
+import LocationSection from "./LocationSection";
 import TourPackage from "./tourPackage";
 
 const ServicesSection = () => {
