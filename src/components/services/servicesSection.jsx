@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Star } from "lucide-react";
 import { services } from "../../utils/data";
 import VehicleServices from "./VehicleServices";
-import LocationsSection from "./locationSection";
+import LocationSection from "./locationSection";
 import TourPackage from "./tourPackage";
 
 const ServicesSection = () => {
@@ -55,7 +55,7 @@ const ServicesSection = () => {
       <VehicleServices />
 
       {/* location section */}
-      <LocationsSection />
+      <LocationSection/>
     </>
   );
 };

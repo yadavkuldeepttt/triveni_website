@@ -10,7 +10,7 @@ import {
 import { cities } from "../../utils/data";
 import LocationSectionDetails from "./details/locationSectionDetails";
 
-const LocationsSection = () => {
+const LocationSection = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
@@ -209,4 +209,4 @@ const LocationsSection = () => {
   );
 };
 
-export default LocationsSection;
+export default LocationSection;
