@@ -1,11 +1,39 @@
-import React from "react";
-import { Car, Users, CreditCard, Phone, CheckCircle2, Star, ShieldCheck, Navigation } from "lucide-react";
-import { bookingSteps, vehiclesServices } from "../../utils/data";
+import React, { useState } from "react";
+import {
+  Users,
+  Star,
+  ShieldCheck,
+  Navigation,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
+import { vehiclesServices } from "../../utils/data";
+import HowToBook from "./howToBook";
+import WhyBook from "./whyBook";
+import { Link } from "react-router";
 
 const VehicleServices = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const getVisibleSlides = () => {
+    if (typeof window === "undefined") return 3;
+    if (window.innerWidth < 640) return 1;
+    if (window.innerWidth < 1024) return 2;
+    return 3;
+  };
+
+  const maxIndex = vehiclesServices.length - getVisibleSlides();
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => Math.max(prev - 1, 0));
+  };
+
   return (
     <div className="bg-gradient-to-b from-white to-[#FFFCD1]">
-      {/* Vehicle Cards */}
       <section className="py-16 max-w-7xl mx-auto px-4">
         <h2 className="text-3xl max-sm:text-2xl font-bold text-center mb-4">
           Our Premium Fleet
@@ -15,150 +43,149 @@ const VehicleServices = () => {
           journey
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {vehiclesServices.map((vehicle, index) => (
-            <div
-              key={index}
-              className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 relative"
+        <div className="relative">
+          {currentIndex > 0 && (
+            <button
+              onClick={prevSlide}
+              className="absolute -left-2 md:-left-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 p-2 rounded-full text-white hover:bg-yellow-400 hover:text-black transition-all"
             >
-              {vehicle.popular && (
-                <div className="absolute top-4 right-4 bg-yellow-400 text-black text-sm font-semibold px-3 py-1 rounded-full z-10">
-                  Popular Choice
-                </div>
-              )}
+              <ChevronLeft className="w-4 h-4 md:w-6 md:h-6" />
+            </button>
+          )}
 
-              <div className="relative">
-                <img
-                  src={vehicle.image}
-                  alt={vehicle.type}
-                  className="w-full h-56 object-cover transform group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                  <div className="flex items-center text-white">
-                    <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                    <span className="ml-2 font-semibold">{vehicle.rating}</span>
-                    <span className="mx-2 text-sm">
-                      (4.1{vehicle.reviews})
-                    </span>
-                  </div>
-                </div>
-              </div>
+          {currentIndex < maxIndex && (
+            <button
+              onClick={nextSlide}
+              className="absolute -right-2 md:-right-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 p-2 rounded-full text-white hover:bg-yellow-400 hover:text-black transition-all"
+            >
+              <ChevronRight className="w-4 h-4 md:w-6 md:h-6" />
+            </button>
+          )}
 
-              <div className="p-6 ">
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-xl font-bold">{vehicle.type}</h3>
-                  <div className="flex items-center bg-gray-100 px-3 py-1 rounded-full ">
-                    <Users className="w-4 h-4 mr-1" />
-                    <span className="text-sm font-medium ">
-                      {vehicle.seating}
-                    </span>
-                  </div>
-                </div>
+          <div className="overflow-hidden">
+            <div
+              className="flex transition-transform duration-500 ease-out"
+              style={{
+                transform: `translateX(-${
+                  currentIndex * (100 / getVisibleSlides())
+                }%)`,
+              }}
+            >
+              {vehiclesServices.map((vehicle, index) => (
+                <div
+                  key={index}
+                  className="w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-2 md:px-4"
+                >
+                  <div className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:-translate-y-2 transition-all duration-300 relative">
+                    {vehicle.popular && (
+                      <div className="absolute top-4 right-4 bg-yellow-400 text-black text-sm font-semibold px-3 py-1 rounded-full z-10">
+                        Popular Choice
+                      </div>
+                    )}
 
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="bg-gray-50 p-2 rounded-lg">
-                    <p className="text-gray-600 text-sm mb-1">Base Fare</p>
-                    <p className="font-bold text-sm">{vehicle.baseFare}</p>
-                  </div>
-                  <div className="bg-gray-50 p-2 rounded-lg">
-                    <p className="text-gray-600 text-sm mb-1">Per KM</p>
-                    <p className="font-bold text-sm">{vehicle.perKm}</p>
-                  </div>
-                  <div className="bg-gray-50 p-2 rounded-lg">
-                    <p className="text-gray-600 text-sm mb-1">Driver</p>
-                    <p className="font-bold text-sm">{vehicle.driverCharges}</p>
-                  </div>
-                  <div className="bg-gray-50 p-2 rounded-lg">
-                    <p className="text-gray-600 text-sm mb-1">Per Day</p>
-                    <p className="font-bold text-sm">{vehicle.perDay}</p>
-                  </div>
-                </div>
+                    <div className="relative">
+                      <img
+                        src={vehicle.image}
+                        alt={vehicle.type}
+                        className="w-full h-56 object-cover"
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                        <div className="flex items-center text-white">
+                          <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                          <span className="ml-2 font-semibold">
+                            {vehicle.rating}
+                          </span>
+                          <span className="mx-2 text-sm">
+                            ({vehicle.reviews})
+                          </span>
+                        </div>
+                      </div>
+                    </div>
 
-                <div className="mb-6">
-                  <div className="flex items-center mb-3">
-                    <ShieldCheck className="w-5 h-5 text-yellow-400 mr-2" />
-                    <h4 className="font-semibold">Included Features</h4>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {vehicle.facilities.map((facility, i) => (
-                      <span
-                        key={i}
-                        className="bg-gray-100 text-gray-800 text-xs tracking-[0.05rem] px-3 py-1 rounded-full"
-                      >
-                        {facility}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                    <div className="p-6">
+                      <div className="flex justify-between items-start mb-4">
+                        <h3 className="text-xl font-bold">{vehicle.type}</h3>
+                        <div className="flex items-center bg-gray-100 px-3 py-1 rounded-full">
+                          <Users className="w-4 h-4 mr-1" />
+                          <span className="text-sm font-medium">
+                            {vehicle.seating}
+                          </span>
+                        </div>
+                      </div>
 
-                <div className="flex gap-3">
-                  <button className="flex-1 bg-black text-white py-2 rounded-xl font-semibold hover:bg-yellow-400 hover:text-black transition-colors flex items-center justify-center">
-                    Book Now
-                  </button>
-                  <button className="px-4 border-2 border-yellow-400 rounded-xl hover:bg-yellow-400 transition-colors">
-                    <Navigation className="w-5 h-5" />
-                  </button>
+                      <div className="grid grid-cols-2 gap-4 mb-6">
+                        <div className="bg-gray-50 p-2 rounded-lg">
+                          <p className="text-gray-600 text-sm mb-1">
+                            Base Fare
+                          </p>
+                          <p className="font-bold text-sm">
+                            {vehicle.baseFare}
+                          </p>
+                        </div>
+                        <div className="bg-gray-50 p-2 rounded-lg">
+                          <p className="text-gray-600 text-sm mb-1">Per KM</p>
+                          <p className="font-bold text-sm">{vehicle.perKm}</p>
+                        </div>
+                        <div className="bg-gray-50 p-2 rounded-lg">
+                          <p className="text-gray-600 text-sm mb-1">Driver</p>
+                          <p className="font-bold text-sm">
+                            {vehicle.driverCharges}
+                          </p>
+                        </div>
+                        <div className="bg-gray-50 p-2 rounded-lg">
+                          <p className="text-gray-600 text-sm mb-1">Per Day</p>
+                          <p className="font-bold text-sm">{vehicle.perDay}</p>
+                        </div>
+                      </div>
+
+                      <div className="mb-6">
+                        <div className="flex items-center mb-3">
+                          <ShieldCheck className="w-5 h-5 text-yellow-400 mr-2" />
+                          <h4 className="font-semibold">Included Features</h4>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                          {vehicle.facilities.map((facility, i) => (
+                            <span
+                              key={i}
+                              className="bg-gray-100 text-gray-800 text-xs tracking-[0.05rem] px-3 py-1 rounded-full"
+                            >
+                              {facility}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="flex gap-3">
+                        <Link
+                          to={`/book-vehicle/${vehicle.type
+                            .toLowerCase()
+                            .replace(/ /g, "-")}/book`}
+                          className="flex-1"
+                        >
+                          <button className="w-full bg-black text-white py-2 rounded-xl font-semibold hover:bg-yellow-400 hover:text-black transition-colors flex items-center justify-center">
+                            Book Now
+                          </button>
+                        </Link>
+                        <Link
+                          to={`/vehicle-details/${vehicle.type
+                            .toLowerCase()
+                            .replace(/ /g, "-")}`}
+                          className="px-4 border-2 border-yellow-400 flex justify-center items-center rounded-xl hover:bg-yellow-400 transition-colors"
+                        >
+                          <Navigation className="w-5 h-5" />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* How to Book */}
-      <section className="py-12 bg-black text-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">How to Book</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {bookingSteps.map((step, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center text-center p-6 bg-white/10 rounded-lg"
-              >
-                <div className="text-yellow-400 mb-4">{step.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                <p className="text-gray-300">{step.description}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
 
-      {/* Why Book With Us */}
-      <section className="py-12 max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">
-          Why Book With Us
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              title: "Experienced Drivers",
-              description:
-                "Professional, trained drivers with years of experience",
-            },
-            {
-              title: "24/7 Support",
-              description:
-                "Round-the-clock customer support for your convenience",
-            },
-            {
-              title: "Best Rates",
-              description: "Competitive pricing with no hidden charges",
-            },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="flex items-start p-6 bg-white rounded-lg shadow-md"
-            >
-              <CheckCircle2 className="w-6 h-6 text-yellow-400 mr-4 flex-shrink-0" />
-              <div>
-                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <HowToBook />
+      <WhyBook />
     </div>
   );
 };

@@ -8,38 +8,6 @@ import {
   Users,
 } from "lucide-react";
 
-export const vehicles = [
-  {
-    title: "Luxury Cars",
-    price: "₹10,000/day",
-    description:
-      "Comfortable and stylish cars for a premium travel experience.",
-    icon: <Car className="w-6 h-6 text-yellow-400" />,
-    image: "/images/car/car2.png",
-  },
-  {
-    title: "SUVs",
-    price: "₹6,500/day",
-    description: "Spacious and reliable SUVs for family and group travel.",
-    icon: <Car className="w-6 h-6 text-green-400" />,
-    image: "/images/car/car1.png",
-  },
-  {
-    title: "Tempo Traveller",
-    price: "₹8,500/day",
-    description: "Perfect for group travel with ample space and comfort.",
-    icon: <Car className="w-6 h-6 text-blue-400" />,
-    image: "/images/car/car2.png",
-  },
-  {
-    title: "Mini Bus",
-    price: "₹12,000/day",
-    description:
-      "Ideal for large groups with comfortable seating and facilities.",
-    icon: <Car className="w-6 h-6 text-red-400" />,
-    image: "/images/car/car1.png",
-  },
-];
 
 export const tourDetails = {
   "manali-tour-from-mumbai": {
@@ -300,4 +268,21 @@ export const bookingSteps = [
     title: "Confirmation",
     description: "Receive instant booking confirmation and driver details",
   },
+];
+
+export const cities = [
+  { name: 'Delhi', region: 'North India', coverage: 'NCR Region', popularity: 'high' },
+  { name: 'Agra', region: 'North India', coverage: 'City + 50km radius', popularity: 'high' },
+  { name: 'Jaipur', region: 'North India', coverage: 'Pink City Area', popularity: 'high' },
+  { name: 'Haridwar', region: 'North India', coverage: 'Temple Circuit', popularity: 'medium' },
+  { name: 'Chandigarh', region: 'North India', coverage: 'Tri-city Area', popularity: 'medium' },
+  { name: 'Shimla', region: 'North India', coverage: 'Hill Station Tours', popularity: 'high' },
+  { name: 'Manali', region: 'North India', coverage: 'Adventure Routes', popularity: 'high' },
+  { name: 'Amritsar', region: 'North India', coverage: 'Golden Temple Area', popularity: 'medium' },
+  { name: 'Dehradun', region: 'North India', coverage: 'Valley Region', popularity: 'medium' },
+  { name: 'Rishikesh', region: 'North India', coverage: 'Spiritual Circuit', popularity: 'high' },
+  { name: 'Jodhpur', region: 'North India', coverage: 'Blue City Area', popularity: 'medium' },
+  { name: 'Udaipur', region: 'North India', coverage: 'Lake City Region', popularity: 'high' },
+  { name: 'Ayodhya', region: 'North India', coverage: 'Temple City', popularity: 'high' },
+  { name: 'Ahmedabad', region: 'West India', coverage: 'City + Suburbs', popularity: 'medium' }
 ];

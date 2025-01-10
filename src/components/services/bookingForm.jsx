@@ -96,7 +96,7 @@ const BookingForm = () => {
               </div>
             </li>
           </ol>
-          <h1 className="text-3xl tracking-[0.07rem] md:text-3xl font-bold text-white mt-8">
+          <h1 className="text-3xl tracking-[0.07rem] md:text-3xl max-sm:text-2xl font-bold text-white mt-8">
           Book with Ease, Travel with Joy.    </h1>
         </div>
       </nav>
@@ -110,21 +110,21 @@ const BookingForm = () => {
           <div className="bg-gradient-to-r from-[#FACF2D] to-[#FFE17D] p-8">
             <div className="flex flex-wrap items-center justify-between">
               <div>
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">
+                <h1 className="text-2xl max-sm:text-xl font-bold text-gray-900 mb-2">
                   {packageInfo.title}
                 </h1>
-                <div className="flex gap-4 text-gray-700">
-                  <div className="flex items-center">
-                    <Calendar className="w-5 h-5 mr-2" />
+                <div className="flex gap-4 text-gray-700 ">
+                  <div className="flex items-center max-sm:text-sm">
+                    <Calendar className="w-4 h-4 mr-2" />
                     {packageInfo.duration}
                   </div>
-                  <div className="flex items-center">
-                    <MapPin className="w-5 h-5 mr-2" />
+                  <div className="flex items-center max-sm:text-sm">
+                    <MapPin className="w-4 h-4 mr-2" />
                     {packageInfo.startingPoint} to {packageInfo.destination}
                   </div>
                 </div>
               </div>
-              <div className="text-3xl font-bold text-gray-900">
+              <div className="text-3xl max-sm:text-2xl  max-sm:mt-2 max-sm:ms-3 font-bold text-gray-900">
                 {packageInfo.price}
                 <span className="text-sm font-normal block">per person</span>
               </div>

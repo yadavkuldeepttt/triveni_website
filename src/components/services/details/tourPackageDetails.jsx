@@ -12,7 +12,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { tourDetails } from "../../utils/data";
+import { tourDetails } from "../../../utils/data";
 
 const TourPackageDetails = () => {
   const { slug } = useParams();

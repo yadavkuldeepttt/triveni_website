@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Trip from "../components/Trip";
 import AboutSection from "../components/aboutUs";
-import ServicesSection from "../components/services/services";
+import ServicesSection from "../components/services/servicesSection";
 import { motion } from "framer-motion";
 
 const Home = () => {

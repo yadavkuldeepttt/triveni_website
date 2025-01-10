@@ -1,17 +1,15 @@
 import React, { useState } from "react";
+import { tourPackages } from "../../utils/data";
 import {
-  Star,
   Calendar,
-  MapPin,
   ChevronLeft,
   ChevronRight,
+  MapPin,
+  Star,
 } from "lucide-react";
 import { Link } from "react-router";
-import { services, tourPackages, vehicles } from "../../utils/data";
-import VehicleServices from "./VehicleServices";
-import LocationsSection from "./LocationSection";
 
-const ServicesSection = () => {
+function TourPackage() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const getVisibleSlides = () => {
@@ -30,10 +28,9 @@ const ServicesSection = () => {
   const prevSlide = () => {
     setCurrentIndex((prev) => Math.max(prev - 1, 0));
   };
-
   return (
-    <>
-      {/* // features package */}
+    <div>
+      {/* //tour package */}
       <section className="py-8 md:py-16 bg-gradient-to-b from-white to-[#FFFCD1]">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-2xl md:text-3xl text-center font-semibold mb-8 md:mb-12">
@@ -110,9 +107,17 @@ const ServicesSection = () => {
                         </div>
 
                         <div className="mt-4 md:mt-6 flex gap-2">
-                          <button className="flex-1 bg-black text-white rounded-md py-1.5 md:py-2 text-xs md:text-sm font-semibold hover:bg-[#FACF2D] hover:text-black transition-all duration-300">
-                            Book Now
-                          </button>
+                          <Link
+                            to={`/tour-package/${pkg.title
+                              .toLowerCase()
+                              .replace(/ /g, "-")}/book`}
+                              className="flex-1"
+
+                          >
+                            <button className="bg-black px-10 text-white rounded-md py-1.5 md:py-2 text-xs md:text-sm font-semibold hover:bg-[#FACF2D] hover:text-black transition-all duration-300">
+                              Book Now
+                            </button>
+                          </Link>
                           <Link
                             to={`/tour-package/${pkg.title
                               .toLowerCase()
@@ -133,100 +138,8 @@ const ServicesSection = () => {
           </div>
         </div>
       </section>
-      {/* all services */}
-      <section className="py-8 md:py-16 bg-gradient-to-b from-white to-[#FFFCD1]">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl text-center font-semibold mb-8 md:mb-12">
-            All Services
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="bg-white p-4 md:p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <div className="flex items-center mb-4">
-                  <div className="p-2 bg-yellow-100 rounded-lg">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-lg md:text-xl font-semibold ml-3">
-                    {service.title}
-                  </h3>
-                </div>
-                <p className="text-gray-600 text-sm md:text-base mb-4">
-                  {service.description}
-                </p>
-                <ul className="space-y-2">
-                  {service.items.map((item, i) => (
-                    <li
-                      key={i}
-                      className="flex items-center text-xs md:text-sm"
-                    >
-                      <Star className="w-4 h-4 text-yellow-400 mr-2" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* vehicles services */}
-      <VehicleServices />
-
-      {/* location section */}
-      {/* <LocationsSection /> */}
-
-      {/* vehicles and pricing */}
-      {/* <section className="bg-gradient-to-b from-white to-yellow-50 py-8 md:py-16">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">
-            Our Vehicles & Pricing
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {vehicles.map((vehicle, index) => (
-              <div
-                key={index}
-                className="border-2 border-yellow-400 rounded-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:shadow-xl bg-white"
-              >
-                <div className="relative">
-                  <img
-                    src={vehicle.image}
-                    alt={vehicle.name}
-                    className="w-full h-48 md:h-[40vh] object-contain object-center group-hover:opacity-80"
-                  />
-                  <div className="absolute top-4 left-4 text-white font-bold text-xs md:text-sm bg-black px-3 md:px-4 py-1 md:py-1.5 rounded-full">
-                    {vehicle.price}
-                  </div>
-                </div>
-                <div className="bg-[#facf2d87] py-3 md:py-4 px-4 md:px-6">
-                  <div className="flex items-center mb-2">
-                    <div className="p-1.5 md:p-2 bg-yellow-100 rounded-lg">
-                      {vehicle.icon}
-                    </div>
-                    <h3 className="text-base md:text-lg font-semibold ml-3">
-                      {vehicle.title}
-                    </h3>
-                  </div>
-                  <p className="text-gray-600 text-xs md:text-sm text-start mt-2">
-                    {vehicle.description}
-                  </p>
-                  <div className="py-2 text-end">
-                    <button className="w-fit px-3 mt-2 md:mt-3 bg-black text-white rounded-md py-1.5 md:py-2 text-xs md:text-sm hover:bg-yellow-400 hover:text-black transition-all">
-                      Book Now
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-    </>
+    </div>
   );
-};
+}
 
-export default ServicesSection;
+export default TourPackage;
