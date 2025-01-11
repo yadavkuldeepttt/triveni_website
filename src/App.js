@@ -12,7 +12,6 @@ import Destination from "./pages/destination.jsx";
 import TourPackageDetails from "./components/services/details/tourPackageDetails.jsx";
 import BookingForm from "./components/services/bookingForm.jsx";
 import WhatsAppFloat from "./components/whatsappFloat.jsx"
-import VehicleBooking from "./components/services/vehicleBooking.jsx";
 import VehicleDetails from "./components/services/details/vehicleServicesDetails.jsx";
 
 
@@ -34,15 +33,13 @@ class App extends Component {
             />
             {/* Booking form route */}
             <Route path="/tour-package/:slug/book" element={<BookingForm />} />
-            {/* vehicle booking form  */}
-            <Route path="/book-vehicle/:slug/book" element={<VehicleBooking/>} />
             <Route
               path="/vehicle-details/:slug"
               element={<VehicleDetails/>}
             />
           </Routes>
         </div>
-              <WhatsAppFloat phoneNumber="YOUR_PHONE_NUMBER" />
+              <WhatsAppFloat phoneNumber="7668570551" />
         <Footer />
       </div>
     );

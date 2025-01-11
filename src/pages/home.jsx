@@ -3,8 +3,10 @@ import Trip from "../components/Trip";
 import AboutSection from "../components/aboutUs";
 import ServicesSection from "../components/services/servicesSection";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router";
 
 const Home = () => {
+  const navigate = useNavigate();
   useEffect(() => {
     const parallaxScroll = () => {
       const banner = document.querySelector(".banner-image");
@@ -58,6 +60,7 @@ const Home = () => {
             className="mt-8 px-8 py-3 bg-white text-black rounded-full text-lg font-semibold hover:bg-opacity-90 transition-colors"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={()=>navigate("/services")}
           >
             Start Exploring
           </motion.button>

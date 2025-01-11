@@ -6,8 +6,6 @@ import { features } from "../utils/data";
 const AboutPage = () => {
   const navigate = useNavigate();
 
- 
-
   return (
     <div className="bg-gradient-to-b from-yellow-100 to-white min-h-screen">
       {/* Breadcrumb Section */}
@@ -54,7 +52,10 @@ const AboutPage = () => {
               ensure your travel is smooth, affordable, and enjoyable.
             </p>
             <div className="flex w-full justify-center space-x-4 md:pt-10 pt-5">
-              <button className="bg-yellow-600 text-white px-6 py-3 max-sm:text-sm max-sm:px-2.5 max-sm:py-1.5 rounded-md shadow-md hover:bg-yellow-700 transition-all duration-300 flex items-center">
+              <button
+                onClick={() => navigate("/contact")}
+                className="bg-yellow-600 text-white px-6 py-3 max-sm:text-sm max-sm:px-2.5 max-sm:py-1.5 rounded-md shadow-md hover:bg-yellow-700 transition-all duration-300 flex items-center"
+              >
                 Learn More
                 <ChevronRight className="w-5 h-5 ml-2" />
               </button>

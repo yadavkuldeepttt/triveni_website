@@ -56,7 +56,7 @@ const ServicesSection = () => {
 
       {/* location section */}
       <LocationSection/>
-    </>
+    </> 
   );
 };
 

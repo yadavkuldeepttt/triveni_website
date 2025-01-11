@@ -7,7 +7,7 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-import { vehiclesServices } from "../../utils/data";
+import { phoneNumber, vehiclesServices } from "../../utils/data";
 import HowToBook from "./howToBook";
 import WhyBook from "./whyBook";
 import { Link } from "react-router";
@@ -31,6 +31,12 @@ const VehicleServices = () => {
   const prevSlide = () => {
     setCurrentIndex((prev) => Math.max(prev - 1, 0));
   };
+
+  // call us
+  const handleClick = () => {
+    window.open(`https://wa.me/${phoneNumber}`, '_blank');
+  };
+
 
   return (
     <div className="bg-gradient-to-b from-white to-[#FFFCD1]">
@@ -156,16 +162,10 @@ const VehicleServices = () => {
                       </div>
 
                       <div className="flex gap-3">
-                        <Link
-                          to={`/book-vehicle/${vehicle.type
-                            .toLowerCase()
-                            .replace(/ /g, "-")}/book`}
-                          className="flex-1"
-                        >
-                          <button className="w-full bg-black text-white py-2 rounded-xl font-semibold hover:bg-yellow-400 hover:text-black transition-colors flex items-center justify-center">
+                        
+                          <button onClick={handleClick} className="w-full bg-black text-white py-2 rounded-xl font-semibold hover:bg-yellow-400 hover:text-black transition-colors flex items-center justify-center">
                             Book Now
                           </button>
-                        </Link>
                         <Link
                           to={`/vehicle-details/${vehicle.type
                             .toLowerCase()

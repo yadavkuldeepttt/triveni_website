@@ -1,79 +1,14 @@
 import React, { useState } from 'react';
 import { ChevronRight, MapPin, Star, Calendar, Users, Globe, ArrowRight, Heart } from 'lucide-react';
+import { destinations, phoneNumber } from '../utils/data';
 
 const Destination = () => {
   const [activeTab, setActiveTab] = useState('destinations');
 
-  const destinations = [
-    {
-      city: "Mumbai",
-      tagline: "City of Dreams",
-      description: "Experience the vibrant culture and modern lifestyle of India's financial capital",
-      rating: 4.8,
-      reviews: 1250,
-      spots: [
-        { name: "Gateway of India", image: "/api/placeholder/600/400", description: "Historic arch monument" },
-        { name: "Marine Drive", image: "/api/placeholder/600/400", description: "Sea-facing promenade" },
-        { name: "Elephanta Caves", image: "/api/placeholder/600/400", description: "Ancient cave temples" }
-      ],
-      packages: [
-        {
-          name: "Mumbai Heritage Walk",
-          duration: "2 Days",
-          highlights: ["Guided tours", "Local cuisine", "Heritage sites"],
-          price: "₹7,999",
-          image: "/images/about/about_banner.jpg"
-        },
-        {
-          name: "Mumbai City Explorer",
-          duration: "3 Days",
-          highlights: ["Bollywood tour", "Street food", "Night safari"],
-          price: "₹12,999",
-          image: "/images/home/banner2.jpg"
-                }
-      ],
-      heroImage: "/api/placeholder/1200/600",
-      gallery: [
-        "/api/placeholder/400/300",
-        "/api/placeholder/400/300",
-        "/api/placeholder/400/300"
-      ]
-    },
-    {
-      city: "Delhi",
-      tagline: "Heart of India",
-      description: "Discover the perfect blend of history and modernity in India's capital",
-      rating: 4.7,
-      reviews: 1480,
-      spots: [
-        { name: "Red Fort", image: "/api/placeholder/600/400", description: "Mughal-era fortress" },
-        { name: "Qutub Minar", image: "/api/placeholder/600/400", description: "UNESCO heritage site" },
-        { name: "India Gate", image: "/api/placeholder/600/400", description: "War memorial" }
-      ],
-      packages: [
-        {
-          name: "Delhi Historical Tour",
-          duration: "2 Days",
-          highlights: ["Monument visits", "Cultural shows", "Local markets"],
-          price: "₹6,999",
-          image: "/images/about/about_banner.jpg"
-        },
-        {
-          name: "Delhi Food & Culture",
-          duration: "3 Days",
-          highlights: ["Food walks", "Art galleries", "Shopping"],
-          price: "₹10,999",
-          image: "/images/home/banner2.jpg"
-        }
-      ],
-      heroImage: "/api/placeholder/1200/600",
-      gallery: [
-        "/api/placeholder/400/300",
-        "/api/placeholder/400/300",
-        "/api/placeholder/400/300"
-      ]
-    }
-  ];
+  const handleClick = () => {
+    window.open(`https://wa.me/${phoneNumber}`, '_blank');
+  };
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -157,7 +92,7 @@ const Destination = () => {
                   <div className="p-6">
                     <p className="text-gray-600 mb-6">{dest.description}</p>
                     <div className="flex justify-between items-center">
-                      <button className="px-6 py-3 bg-black text-white rounded-lg hover:bg-yellow-500 transition-colors duration-300">
+                      <button onClick={handleClick} className="px-6 py-3 bg-black text-white rounded-lg hover:bg-yellow-500 transition-colors duration-300">
                         Explore {dest.city}
                       </button>
                       <button className="p-3 rounded-full hover:bg-gray-100 transition-colors">
@@ -206,7 +141,7 @@ const Destination = () => {
                       </ul>
                       <div className="flex items-center justify-between">
                         <span className="text-2xl font-bold text-yellow-600">{pkg.price}</span>
-                        <button className="px-4 py-2 bg-black text-white rounded-lg hover:bg-yellow-500 transition-colors">
+                        <button onClick={handleClick} className="px-4 py-2 bg-black text-white rounded-lg hover:bg-yellow-500 transition-colors">
                           Book Now
                         </button>
                       </div>
@@ -242,7 +177,7 @@ const Destination = () => {
                       <div className="p-6">
                         <h3 className="text-xl font-semibold mb-2">{spot.name}</h3>
                         <p className="text-gray-600 mb-4">{spot.description}</p>
-                        <button className="flex items-center text-yellow-600 hover:text-yellow-700 transition-colors">
+                        <button onClick={handleClick} className="flex items-center text-yellow-600 hover:text-yellow-700 transition-colors">
                           Learn More <ArrowRight className="ml-2 w-4 h-4" />
                         </button>
                       </div>

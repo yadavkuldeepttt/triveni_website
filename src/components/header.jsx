@@ -10,6 +10,11 @@ const Header = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const handleLogin = ()=>{
+    setIsModalOpen(true);
+    setMenuOpen(false);
+  }
+
   return (
     <div className="sticky top-0 z-50 w-full">
       <header className="bg-[#FACF2D] shadow-sm ">
@@ -125,7 +130,7 @@ const Header = () => {
               </a>
             </nav>
             <button
-              onClick={() => setIsModalOpen(true)}
+              onClick={handleLogin}
               className="bg-black mt-10 text-white rounded-full px-10 py-2 text-xs tracking-[0.06rem] hover:bg-gray-800 hover:text-[#FACF2D] transition-all duration-300"
             >
               Login

@@ -1,8 +1,10 @@
 import React from "react";
-import { MapPin, Car, Clock, Phone, ChevronRight } from "lucide-react";
+import {  ChevronRight } from "lucide-react";
 import { features } from "../utils/data";
+import { useNavigate } from "react-router";
 
 const AboutSection = () => {
+  const navigate = useNavigate();
 
   return (
     <div className="bg-[#FFFCD1] py-16">
@@ -24,11 +26,11 @@ const AboutSection = () => {
               ensure your travel is smooth, affordable, and enjoyable
             </p>
             <div className="flex space-x-4 md:pt-10 pt-5 flex w-full justify-center">
-              <button className="bg-black text-white px-6 py-2 max-sm:text-sm max-sm:px-2.5 max-sm:py-1.5 rounded-md hover:bg-[#FACF2D] hover:text-black  flex items-center group">
+              <button onClick={()=>navigate("/about")} className="bg-black text-white px-6 py-2 max-sm:text-sm max-sm:px-2.5 max-sm:py-1.5 rounded-md hover:bg-[#FACF2D] hover:text-black  flex items-center group">
                 Learn More
                 <ChevronRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="border-2 border-black px-6 py-2 max-sm:text-sm max-sm:px-2.5 max-sm:py-1.5 rounded-md hover:bg-black hover:text-white transition-all duration-300 flex items-center group">
+              <button onClick={()=>navigate("/contact")} className="border-2 border-black px-6 py-2 max-sm:text-sm max-sm:px-2.5 max-sm:py-1.5 rounded-md hover:bg-black hover:text-white transition-all duration-300 flex items-center group">
                 Contact Us
                 <ChevronRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
               </button>

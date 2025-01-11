@@ -2,6 +2,10 @@ import { ChevronRight, Phone, Mail, MapPin, Clock, Send, ArrowRight } from 'luci
 import React from 'react'
 
 function Contact() {
+  const handleClick = () => {
+    window.open(`https://wa.me/${phoneNumber}`, '_blank');
+  };
+
   return (
     <div className="bg-gradient-to-b from-yellow-50 to-white min-h-screen">
       {/* Hero Section with Breadcrumb */}
@@ -166,7 +170,8 @@ function Contact() {
               <h3 className="text-xl font-bold text-gray-800 mb-4">Need Immediate Assistance?</h3>
               <p className="text-gray-600 mb-6">Our support team is available 24/7 to help you with any questions.</p>
               <a
-                href="tel:+15551234567"
+                href="#"
+                onClick={handleClick}
                 className="inline-flex items-center space-x-2 text-yellow-600 hover:text-yellow-700 font-medium"
               >
                 <Phone className="w-5 h-5" />

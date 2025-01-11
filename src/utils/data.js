@@ -14,7 +14,7 @@ export const tourDetails = {
     title: "Manali Tour from Mumbai",
     price: "₹15,999",
     duration: "6 Days 5 Nights",
-    image: "/images/about/about_banner.jpg",
+    image: "/images/packages/manali.jpg",
     startingPoint: "Mumbai",
     destination: "Manali",
     departureDate: "Weekly",
@@ -76,14 +76,80 @@ export const tourDetails = {
       amenities: ["Room service", "WiFi", "Restaurant", "Spa"],
     },
   },
+  "chardham-yatra-package": {
+    title: "chardham-yatra-package",
+    price: "₹15,999",
+    duration: "6 Days 5 Nights",
+    image: "/images/packages/chardham.jpg",
+    startingPoint: "Mumbai",
+    destination: "Chardham",
+    departureDate: "Weekly",
+    category: "Adventure",
+    overview:
+      "Experience the magic of Chardham with our all-inclusive package from Mumbai. Explore snow-capped peaks, adventure activities, and cultural landmarks.",
+    inclusions: [
+      "Flight tickets: Mumbai - Delhi - Mumbai",
+      "AC Volvo bus: Delhi - Chardham - Delhi",
+      "5 nights accommodation in 4-star hotel",
+      "All meals (breakfast, lunch, dinner)",
+      "Private vehicle for sightseeing",
+      "Adventure activities package",
+      "Professional guide services",
+      "All taxes included",
+    ],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Mumbai to Delhi to Chardham",
+        details: "Flight to Delhi, overnight Volvo journey to Chardham",
+      },
+      {
+        day: "Day 2",
+        title: "Chardham Local",
+        details: "Hadimba Temple, Mall Road, Monastery, Old Chardham",
+      },
+      {
+        day: "Day 3",
+        title: "Solang Valley",
+        details: "Adventure activities, snow sports (seasonal)",
+      },
+      {
+        day: "Day 4",
+        title: "Rohtang Pass",
+        details: "Snow point visit, photography, local activities",
+      },
+      {
+        day: "Day 5",
+        title: "Kullu Valley",
+        details: "River rafting, shopping, temple visits",
+      },
+      {
+        day: "Day 6",
+        title: "Return Journey",
+        details: "Departure for Delhi, flight to Mumbai",
+      },
+    ],
+    highlights: [
+      "Snow activities at Rohtang Pass",
+      "Adventure sports in Solang Valley",
+      "Cultural tours of temples",
+      "Shopping at Mall Road",
+      "River rafting experience",
+    ],
+    accommodation: {
+      name: "Snow Valley Resort",
+      rating: "4 Star",
+      amenities: ["Room service", "WiFi", "Restaurant", "Spa"],
+    },
+  },
 };
 
 export const tourPackages = [
   {
-    title: "Manali Tour from Mumbai",
+    title: "Chardham Tour from Mumbai",
     price: "₹9,999",
     duration: "5 Days 4 Nights",
-    image: "/api/placeholder/800/500",
+    image: "/images/packages/manali.jpg",
     startingPoint: "Jaipur",
     destination: "Manali",
     departureDate: "Weekly",
@@ -93,7 +159,7 @@ export const tourPackages = [
     title: "Chardham Yatra Package",
     price: "₹24,999",
     duration: "12 Days 11 Nights",
-    image: "/api/placeholder/800/500",
+    image: "/images/packages/chardham.jpg",
     startingPoint: "Delhi",
     destination: "Chardham",
     departureDate: "Monthly",
@@ -103,7 +169,7 @@ export const tourPackages = [
     title: "Manali from Mumbai",
     price: "₹15,999",
     duration: "6 Days 5 Nights",
-    image: "/api/placeholder/800/500",
+    image: "/images/packages/manali.jpg",
     startingPoint: "Mumbai",
     destination: "Manali",
     departureDate: "Weekly",
@@ -113,7 +179,7 @@ export const tourPackages = [
     title: "Kerala Backwaters",
     price: "₹12,999",
     duration: "5 Days 4 Nights",
-    image: "/api/placeholder/800/500",
+    image: "/images/packages/kerala.jpg",
     startingPoint: "Kochi",
     destination: "Kerala",
     departureDate: "Daily",
@@ -123,7 +189,7 @@ export const tourPackages = [
     title: "Goa Beach Tour",
     price: "₹8,999",
     duration: "4 Days 3 Nights",
-    image: "/api/placeholder/800/500",
+    image: "/images/packages/goa.jpg",
     startingPoint: "Mumbai",
     destination: "Goa",
     departureDate: "Daily",
@@ -216,7 +282,7 @@ export const vehiclesServices = [
   },
   {
     type: "Tempo Traveller",
-    image: "/images/car/car1.png",
+    image: "/images/car/3.jpeg",
     seating: "12-15 passengers",
     baseFare: "₹1500",
     perKm: "₹18/km",
@@ -233,7 +299,7 @@ export const vehiclesServices = [
   },
   {
     type: "Luxury Bus",
-    image: "/images/car/car2.png",
+    image: "/images/car/8.jpeg",
     seating: "30-35 passengers",
     baseFare: "₹3000",
     perKm: "₹25/km",
@@ -286,3 +352,176 @@ export const cities = [
   { name: 'Ayodhya', region: 'North India', coverage: 'Temple City', popularity: 'high' },
   { name: 'Ahmedabad', region: 'West India', coverage: 'City + Suburbs', popularity: 'medium' }
 ];
+
+
+export  const destinations = [
+  {
+    city: "Mumbai",
+    tagline: "City of Dreams",
+    description: "Experience the vibrant culture and modern lifestyle of India's financial capital",
+    rating: 4.8,
+    reviews: 1250,
+    spots: [
+      { name: "Gateway of India", image: "/images/spots/gateway.jpg", description: "Historic arch monument" },
+      { name: "Marine Drive", image: "/images/spots/marinedrive.jpg", description: "Sea-facing promenade" },
+      { name: "Elephanta Caves", image: "/images/spots/elephanta.jpg", description: "Ancient cave temples" }
+    ],
+    packages: [
+      {
+        name: "Mumbai Heritage Walk",
+        duration: "2 Days",
+        highlights: ["Guided tours", "Local cuisine", "Heritage sites"],
+        price: "₹7,999",
+        image: "/images/destinations/mumbai.jpg"
+      },
+      {
+        name: "Mumbai City Explorer",
+        duration: "3 Days",
+        highlights: ["Bollywood tour", "Street food", "Night safari"],
+        price: "₹12,999",
+        image: "/images/home/banner2.jpg"
+              }
+    ],
+    heroImage: "/images/destinations/mumbai.jpg",
+    gallery: [
+      "/api/placeholder/400/300",
+      "/api/placeholder/400/300",
+      "/api/placeholder/400/300"
+    ]
+  },
+  {
+    city: "Delhi",
+    tagline: "Heart of India",
+    description: "Discover the perfect blend of history and modernity in India's capital",
+    rating: 4.7,
+    reviews: 1480,
+    spots: [
+      { name: "Red Fort", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Red_Fort_3.jpg/800px-Red_Fort_3.jpg", description: "Mughal-era fortress" },
+      { name: "Qutub Minar", image: "https://media.gettyimages.com/id/165204592/photo/qutub-minar-delhi-india.jpg?s=612x612&w=0&k=20&c=YvFLPmQmlgCyX7RGZA1VpKctdC6QsChINzLSMDPNI9k=", description: "UNESCO heritage site" },
+      { name: "India Gate", image: "https://media.gettyimages.com/id/522675372/photo/india-gate-a-national-monument-is-a-massive-red-sandstone-arch-and-the-indian-armys-tomb-of.jpg?s=612x612&w=0&k=20&c=YPBiK0nvpg0XvryE2PEfJp0gpLCXfPjoyQvRPgTQl8A=", description: "War memorial" }
+    ],
+    packages: [
+      {
+        name: "Delhi Historical Tour",
+        duration: "2 Days",
+        highlights: ["Monument visits", "Cultural shows", "Local markets"],
+        price: "₹6,999",
+        image: "/images/about/about_banner.jpg"
+      },
+      {
+        name: "Delhi Food & Culture",
+        duration: "3 Days",
+        highlights: ["Food walks", "Art galleries", "Shopping"],
+        price: "₹10,999",
+        image: "/images/destinations/delhi.jpg"
+      }
+    ],
+    heroImage: "/images/destinations/delhi.jpg",
+    gallery: [
+      "/api/placeholder/400/300",
+      "/api/placeholder/400/300",
+      "/api/placeholder/400/300"
+    ]
+  }
+];
+
+  // Sample data array of multiple vehicles
+ export const vehicleDetails = [
+    {
+      id: "1",
+      type: "Sedan",
+      image: "/images/car/3.jpeg",
+      rating: "4.9",
+      reviews: "128",
+      seating: "6 Seater",
+      baseFare: "₹3000",
+      perKm: "₹18/km",
+      driverCharges: "Included",
+      perDay: "₹4500",
+      facilities: ["AC", "WiFi", "Music System", "GPS"],
+      description:
+        "Experience luxury and comfort with our premium SUV. Perfect for family trips and business travel.",
+      features: [
+        "24/7 Roadside Assistance",
+        "Comprehensive Insurance",
+        "Professional Chauffeur",
+        "Regular Sanitization",
+        "Flexible Booking",
+        "Free Cancellation",
+      ],
+    },
+    {
+      id: "2",
+      type: "SUV",
+      image: "/images/car/8.jpeg",
+      rating: "4.8",
+      reviews: "96",
+      seating: "4 Seater",
+      baseFare: "₹2500",
+      perKm: "₹15/km",
+      driverCharges: "Included",
+      perDay: "₹3500",
+      facilities: ["AC", "WiFi", "Music System", "GPS"],
+      description:
+        "Elegant and comfortable sedan perfect for business travel and small families.",
+      features: [
+        "24/7 Roadside Assistance",
+        "Comprehensive Insurance",
+        "Professional Chauffeur",
+        "Regular Sanitization",
+        "Flexible Booking",
+        "Free Cancellation",
+      ],
+    },
+    {
+      id: "3",
+      type: "Tempo-Traveller",
+      image: "/images/car/8.jpeg",
+      rating: "4.7",
+      reviews: "75",
+      seating: "8 Seater",
+      baseFare: "₹3500",
+      perKm: "₹20/km",
+      driverCharges: "Included",
+      perDay: "₹5000",
+      facilities: ["AC", "WiFi", "Music System", "GPS"],
+      description:
+        "Spacious minivan ideal for large families and group travel.",
+      features: [
+        "24/7 Roadside Assistance",
+        "Comprehensive Insurance",
+        "Professional Chauffeur",
+        "Regular Sanitization",
+        "Flexible Booking",
+        "Free Cancellation",
+      ],
+    },
+    {
+      id: "4",
+      type: "Luxury-Bus",
+      image: "/images/car/5.jpeg",
+      rating: "4.7",
+      reviews: "75",
+      seating: "8 Seater",
+      baseFare: "₹3500",
+      perKm: "₹20/km",
+      driverCharges: "Included",
+      perDay: "₹5000",
+      facilities: ["AC", "WiFi", "Music System", "GPS"],
+      description:
+        "Spacious minivan ideal for large families and group travel.",
+      features: [
+        "24/7 Roadside Assistance",
+        "Comprehensive Insurance",
+        "Professional Chauffeur",
+        "Regular Sanitization",
+        "Flexible Booking",
+        "Free Cancellation",
+      ],
+    },
+  ];
+
+  export const phoneNumber = "7668570551";
+
+
+  
