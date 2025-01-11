@@ -8,7 +8,7 @@ const AuthModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center mx-2">
+    <div className="fixed inset-0 z-50 flex items-center justify-center ">
       {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-black/60 backdrop-blur-sm "
@@ -16,7 +16,7 @@ const AuthModal = ({ isOpen, onClose }) => {
       />
       
       {/* Modal */}
-      <div className="relative bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden   ">
+      <div className="relative mx-2 bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden   ">
         {/* Close Button */}
         <button 
           onClick={onClose}
