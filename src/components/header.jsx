@@ -73,6 +73,15 @@ const Header = () => {
                   Rent Car
                 </a>
               </div>
+              <div className="relative group md:pl-4">
+                <a
+                  href="/tour-guide"
+                  className="text-gray-700 hover:text-yellow-600 font-semibold"
+                >
+                  Tour Guide
+                </a>
+              </div>
+              
             </nav>
 
             {/* Phone Number & Login */}
@@ -143,6 +152,12 @@ const Header = () => {
                 className="text-gray-700 hover:text-yellow-600 font-semibold"
               >
                 Rent Car
+              </a>
+              <a
+                href="/tour-guide"
+                className="text-gray-700 hover:text-yellow-600 font-semibold"
+              >
+                Tour Guide
               </a>
 
               {/* Vehicles Section */}

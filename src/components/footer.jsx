@@ -125,16 +125,16 @@ const Footer = () => {
                   <div className="bg-[#FACF2D] p-2 rounded-full">
                     <Mail className="w-4 h-4 text-black" />
                   </div>
-                  <div className="">
-                    <p>support@triveni.com</p>
+                  <div className="text-sm text-start">
+                    <p>cabstriveni@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3 hover:text-[#FACF2D] transition-colors duration-300">
                   <div className="bg-[#FACF2D] p-2 rounded-full">
                     <MapPin className="w-4 h-4 text-black" />
                   </div>
-                  <div className="">
-                    <p>Main Street, New Jersey</p>
+                  <div className="text-start text-sm">
+                    <p>366, Dandupura, near Tajganj, Agra, 282006</p>
                   </div>
                 </div>
               </div>

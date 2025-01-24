@@ -14,6 +14,7 @@ import BookingForm from "./components/services/bookingForm.jsx";
 import WhatsAppFloat from "./components/whatsappFloat.jsx"
 import VehicleDetails from "./components/services/details/vehicleServicesDetails.jsx";
 import RentalCars from "./components/trip/carRent/carRent.jsx";
+import TourGuidePage from "./pages/tourGuidePage.jsx";
 
 
 class App extends Component {
@@ -29,6 +30,8 @@ class App extends Component {
             <Route path="/contact" element={<Contact />} />
             <Route path="/destinations" element={<Destination />} />
             <Route path="/car-rental" element={<RentalCars />} />
+            <Route path="/tour-guide" element={<TourGuidePage />} />
+            
             
             <Route
               path="/tour-package/:slug"

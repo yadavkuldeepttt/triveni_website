@@ -104,7 +104,7 @@ const CarSliderStandard = ({ cars, currentIndex, setCurrentIndex, title }) => {
                         <p className="font-bold text-sm">{car.minDays} Days</p>
                       </div>
                       <div className="bg-yellow-100 p-2 rounded-lg">
-                        <p className="text-gray-600 text-sm mb-1">Security</p>
+                        <p className="text-gray-600 text-sm mb-1">Advance</p>
                         <p className="font-bold text-sm">{car.securityDeposit}</p>
                       </div>
                       <div className="bg-yellow-100 p-2 rounded-lg">

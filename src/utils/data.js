@@ -14,14 +14,14 @@ export const tourDetails = {
     price: "₹9,999",
     duration: "5 Days 4 Nights",
     image: "/images/packages/manali.jpg",
-    startingPoint: "Jaipur",
+    startingPoint: "Mumbai",
     destination: "Manali",
     departureDate: "Weekly",
     category: "Adventure",
     overview:
       "Experience the charm of Manali with our adventure-packed package. Enjoy breathtaking views, thrilling activities, and serene landscapes.",
     inclusions: [
-      "Travel by AC bus from Jaipur",
+      "Travel by AC bus from Mumbai",
       "3-star accommodation for 4 nights",
       "Breakfast and dinner",
       "Sightseeing with a local guide",
@@ -30,7 +30,7 @@ export const tourDetails = {
     itinerary: [
       {
         day: "Day 1",
-        title: "Jaipur to Manali",
+        title: "Mumbai to Manali",
         details: "Overnight bus journey to Manali.",
       },
       {
@@ -50,8 +50,8 @@ export const tourDetails = {
       },
       {
         day: "Day 5",
-        title: "Return to Jaipur",
-        details: "Depart for Jaipur in the evening.",
+        title: "Return to Mumbai",
+        details: "Depart for Mumbai in the evening.",
       },
     ],
     highlights: [
@@ -131,163 +131,220 @@ export const tourDetails = {
     departureDate: "Weekly",
     category: "Adventure",
     overview:
-      "Discover the colonial charm and natural beauty of Shimla with our comprehensive tour package from Mumbai.",
+      "Escape to the scenic hills of Shimla, experiencing colonial charm and natural beauty.",
     inclusions: [
-      "Flights: Mumbai - Delhi - Mumbai",
-      "AC Volvo bus: Delhi - Shimla - Delhi",
-      "4 nights stay in 3-star hotel",
-      "All meals included",
-      "Guided sightseeing",
+      "Travel by AC bus",
+      "3-star accommodation",
+      "Breakfast and dinner",
+      "Local sightseeing tours",
+      "Professional guide",
     ],
     itinerary: [
       {
         day: "Day 1",
         title: "Mumbai to Shimla",
-        details: "Flight to Delhi, bus to Shimla.",
+        details: "Travel to Shimla, evening at leisure.",
       },
       {
         day: "Day 2",
-        title: "Shimla Local",
-        details: "Visit Mall Road, Christ Church, and Jakhoo Temple.",
+        title: "Shimla Sightseeing",
+        details: "Visit Mall Road, Christ Church, and The Ridge.",
       },
       {
         day: "Day 3",
-        title: "Kufri",
-        details: "Explore Kufri and enjoy adventure sports.",
+        title: "Kufri Excursion",
+        details: "Day trip to Kufri, enjoy scenic views and activities.",
       },
       {
         day: "Day 4",
-        title: "Chail",
-        details: "Visit the historic Chail Palace and cricket ground.",
+        title: "Naldehra",
+        details: "Visit Naldehra, enjoy golf course and surroundings.",
       },
       {
         day: "Day 5",
-        title: "Leisure Day",
-        details: "Explore Shimla at your own pace.",
+        title: "Local Experiences",
+        details: "Optional activities, local market exploration.",
       },
       {
         day: "Day 6",
         title: "Return to Mumbai",
-        details: "Bus to Delhi, flight to Mumbai.",
+        details: "Departure for Mumbai.",
       },
     ],
     highlights: [
-      "Kufri adventure sports",
       "Colonial architecture",
-      "Jakhoo Temple visit",
+      "Scenic mountain views",
+      "Mall Road shopping",
     ],
     accommodation: {
-      name: "Hilltop Retreat",
+      name: "Shimla Heritage Resort",
       rating: "3 Star",
-      amenities: ["WiFi", "Room service", "Restaurant"],
+      amenities: ["WiFi", "Restaurant", "Mountain view"],
     },
   },
-  "kerala-backwaters": {
-    title: "Kerala Backwaters",
-    price: "₹12,999",
-    duration: "5 Days 4 Nights",
-    image: "/images/packages/kerala.jpg",
-    startingPoint: "Kochi",
-    destination: "Kerala",
-    departureDate: "Daily",
-    category: "Nature",
+  "rajasthan-tour": {
+    title: "Rajasthan Tour",
+    price: "₹19,999",
+    duration: "7 Days 6 Nights",
+    image: "/images/packages/rajasthan.jpg",
+    startingPoint: "Jaipur",
+    destination: "Rajasthan",
+    departureDate: "Weekly",
+    category: "Cultural",
     overview:
-      "Explore the serene backwaters of Kerala with this relaxing package. Enjoy houseboat rides, lush greenery, and tranquil waterscapes.",
+      "Explore the royal heritage and vibrant culture of Rajasthan with our comprehensive tour package.",
     inclusions: [
-      "Stay in a luxury houseboat for 1 night",
-      "4-star accommodation for 3 nights",
+      "Travel by AC bus",
+      "4-star accommodation",
       "Breakfast and dinner",
-      "Private transportation",
-      "Local sightseeing with an experienced guide",
+      "Local sightseeing tours",
+      "Professional guide",
     ],
     itinerary: [
       {
         day: "Day 1",
-        title: "Arrival in Kochi",
-        details: "Check-in, explore Fort Kochi and local markets.",
+        title: "Jaipur Arrival",
+        details: "Welcome to Jaipur, check-in and leisure.",
       },
       {
         day: "Day 2",
-        title: "Houseboat Stay in Alleppey",
-        details: "Enjoy a scenic ride and overnight stay.",
+        title: "Jaipur Sightseeing",
+        details: "Visit Amber Fort, Hawa Mahal, and City Palace.",
       },
       {
         day: "Day 3",
-        title: "Munnar",
-        details: "Travel to Munnar, visit tea gardens and waterfalls.",
+        title: "Pushkar",
+        details: "Explore the Brahma Temple and Pushkar Lake.",
       },
       {
         day: "Day 4",
-        title: "Periyar Wildlife Sanctuary",
-        details: "Wildlife tour and boat ride in Thekkady.",
+        title: "Jodhpur",
+        details: "Visit Mehrangarh Fort and Umaid Bhawan Palace.",
       },
       {
         day: "Day 5",
-        title: "Return to Kochi",
-        details: "Shopping and departure.",
+        title: "Udaipur",
+        details: "Discover Lake Pichola, City Palace, and more.",
+      },
+      {
+        day: "Day 6",
+        title: "Mount Abu",
+        details: "Visit Dilwara Temples and enjoy scenic views.",
+      },
+      {
+        day: "Day 7",
+        title: "Return to Jaipur",
+        details: "Leisure time and departure.",
       },
     ],
     highlights: [
-      "Houseboat experience in Alleppey",
-      "Scenic tea gardens in Munnar",
-      "Wildlife exploration in Thekkady",
+      "Amber Fort in Jaipur",
+      "Lake Pichola in Udaipur",
+      "Dilwara Temples in Mount Abu",
     ],
     accommodation: {
-      name: "Backwater Bliss Houseboat",
+      name: "Royal Heritage Hotel",
       rating: "4 Star",
-      amenities: ["WiFi", "Restaurant", "Room service"],
+      amenities: ["WiFi", "Restaurant", "Swimming pool"],
     },
   },
-  "goa-beach-tour": {
-    title: "Goa Beach Tour",
-    price: "₹8,999",
-    duration: "4 Days 3 Nights",
-    image: "/images/packages/goa.jpg",
-    startingPoint: "Mumbai",
-    destination: "Goa",
-    departureDate: "Daily",
-    category: "Beach",
+  "kashmir-tour": {
+    title: "Kashmir Tour",
+    price: "₹16,999",
+    duration: "5 Days 4 Nights",
+    image: "/images/packages/kashmir.jpg",
+    startingPoint: "Delhi",
+    destination: "Kashmir",
+    departureDate: "Monthly",
+    category: "Nature",
     overview:
-      "Experience the vibrant beaches and nightlife of Goa with this affordable package. Perfect for relaxation and adventure.",
+      "Experience the stunning beauty of Kashmir's landscapes and vibrant culture with this exclusive package.",
     inclusions: [
-      "Travel by AC sleeper bus from Mumbai",
-      "3-star accommodation near the beach",
-      "Breakfast included",
-      "Beach activities and water sports",
+      "Flights: Delhi - Srinagar - Delhi",
+      "Deluxe hotel accommodation",
+      "Breakfast and dinner",
+      "Shikara ride in Dal Lake",
       "Local sightseeing tours",
     ],
     itinerary: [
       {
         day: "Day 1",
-        title: "Arrival in Goa",
-        details: "Check-in, relax on the beach, and explore the nightlife.",
+        title: "Delhi to Srinagar",
+        details: "Flight to Srinagar and hotel check-in.",
       },
       {
         day: "Day 2",
-        title: "North Goa Tour",
-        details: "Visit Calangute, Baga, and Anjuna beaches.",
+        title: "Gulmarg Day Trip",
+        details: "Explore scenic Gulmarg, cable car ride optional.",
       },
       {
         day: "Day 3",
-        title: "South Goa Tour",
-        details:
-          "Explore Colva Beach, Basilica of Bom Jesus, and Dudhsagar Falls.",
+        title: "Pahalgam Excursion",
+        details: "Enjoy the serene valleys and Lidder River.",
       },
       {
         day: "Day 4",
-        title: "Return to Mumbai",
-        details: "Leisure time and departure in the evening.",
+        title: "Srinagar Sightseeing",
+        details: "Visit Mughal Gardens, Dal Lake, and local markets.",
+      },
+    ],
+    accommodation: {
+      name: "Deluxe Hotel",
+      rating: 4.5,
+      amenities: [
+        "Free Wi-Fi",
+        "Room service",
+        "Heated rooms",
+        "Complimentary toiletries",
+        "Scenic views",
+      ],
+    },
+  },
+  "punjab-tour": {
+    title: "Punjab Tour",
+    price: "₹10,999",
+    duration: "3 Days 2 Nights",
+    image:
+      "https://t3.ftcdn.net/jpg/03/11/74/00/360_F_311740081_PL7ftGHnZL7JMBQpigswigY2xFwSRHJg.jpg",
+    startingPoint: "Delhi",
+    destination: "Punjab",
+    departureDate: "Monthly",
+    category: "Cultural",
+    overview:
+      "Explore the vibrant culture, rich history, and warm hospitality of Punjab with our comprehensive tour package.",
+    inclusions: [
+      "Travel by AC bus",
+      "3-star accommodation",
+      "Breakfast and dinner",
+      "Local sightseeing tours",
+      "Professional guide",
+    ],
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Delhi to Amritsar",
+        details: "Travel to Amritsar, evening visit to Golden Temple.",
+      },
+      {
+        day: "Day 2",
+        title: "Amritsar Sightseeing",
+        details: "Visit Jallianwala Bagh, Wagah Border ceremony.",
+      },
+      {
+        day: "Day 3",
+        title: "Return to Delhi",
+        details: "Explore local markets, return journey.",
       },
     ],
     highlights: [
-      "Water sports at Calangute",
-      "Historic churches and temples",
-      "Dudhsagar Falls trek",
+      "Golden Temple",
+      "Wagah Border ceremony",
+      "Punjabi cuisine and culture",
     ],
     accommodation: {
-      name: "Beachside Retreat Hotel",
+      name: "Punjab Heritage Hotel",
       rating: "3 Star",
-      amenities: ["WiFi", "Swimming pool", "Restaurant"],
+      amenities: ["WiFi", "Restaurant", "Local assistance"],
     },
   },
 };
@@ -298,7 +355,7 @@ export const tourPackages = [
     price: "₹9,999",
     duration: "5 Days 4 Nights",
     image: "/images/packages/manali.jpg",
-    startingPoint: "Jaipur",
+    startingPoint: "Mumbai",
     destination: "Manali",
     departureDate: "Weekly",
     category: "Adventure",
@@ -324,24 +381,35 @@ export const tourPackages = [
     category: "Adventure",
   },
   {
-    title: "Kerala Backwaters",
-    price: "₹12,999",
+    title: "Rajasthan Tour",
+    price: "₹19,999",
+    duration: "7 Days 6 Nights",
+    image: "/images/packages/rajasthan.jpg",
+    startingPoint: "Jaipur",
+    destination: "Rajasthan",
+    departureDate: "Weekly",
+    category: "Cultural",
+  },
+  {
+    title: "Kashmir Tour",
+    price: "₹16,999",
     duration: "5 Days 4 Nights",
-    image: "/images/packages/kerala.jpg",
-    startingPoint: "Kochi",
-    destination: "Kerala",
-    departureDate: "Daily",
+    image: "/images/packages/kashmir.jpg",
+    startingPoint: "Delhi",
+    destination: "Kashmir",
+    departureDate: "Monthly",
     category: "Nature",
   },
   {
-    title: "Goa Beach Tour",
-    price: "₹8,999",
-    duration: "4 Days 3 Nights",
-    image: "/images/packages/goa.jpg",
-    startingPoint: "Mumbai",
-    destination: "Goa",
-    departureDate: "Daily",
-    category: "Beach",
+    title: "Punjab Tour",
+    price: "₹10,999",
+    duration: "3 Days 2 Nights",
+    image:
+      "https://media.istockphoto.com/id/478673422/photo/golden-temple-amritsar.jpg?s=612x612&w=0&k=20&c=LvdukkiiqHZmQxOTjf9UPGHcWldxaFLIZc8k2FEFxfM=",
+    startingPoint: "Delhi",
+    destination: "Punjab",
+    departureDate: "Monthly",
+    category: "Cultural",
   },
 ];
 
@@ -492,6 +560,7 @@ export const vehiclesServices = [
     bestFor: ["Mid-sized groups", "Short tours", "Corporate outings"],
   },
 ];
+
 export const vehicleDetails = [
   {
     id: "1",
@@ -1425,183 +1494,214 @@ export const touristSpots = {
     {
       name: "Humayun's Tomb",
       description: "Magnificent Mughal architecture",
-      image: "https://media.istockphoto.com/id/532703419/photo/humayuns-tomb-delhi-india.jpg?s=612x612&w=0&k=20&c=xLOQ5pzw0NJ-TSjhCmDViCygbE92coHOQREtRaYEqyI=",
+      image:
+        "https://media.istockphoto.com/id/532703419/photo/humayuns-tomb-delhi-india.jpg?s=612x612&w=0&k=20&c=xLOQ5pzw0NJ-TSjhCmDViCygbE92coHOQREtRaYEqyI=",
     },
     {
       name: "Lotus Temple",
       description: "Modern architectural marvel",
-      image: "https://media.istockphoto.com/id/487221269/photo/night-view-of-lotus-temple.jpg?s=612x612&w=0&k=20&c=Y6GASX6ZR0D2rqi3AeBCn574xhRPOz1ENiWp5dgmAXI=",
+      image:
+        "https://media.istockphoto.com/id/487221269/photo/night-view-of-lotus-temple.jpg?s=612x612&w=0&k=20&c=Y6GASX6ZR0D2rqi3AeBCn574xhRPOz1ENiWp5dgmAXI=",
     },
   ],
   Agra: [
     {
       name: "Taj Mahal",
       description: "Wonder of the World",
-      image: "https://media.istockphoto.com/id/519330110/photo/taj-mahal-agra-india-monument-of-love-in-blue-sky.jpg?s=612x612&w=0&k=20&c=Uma6Q7KduznA6jUKcSquFP1iHHiw8UXcZEYVLONrmaQ=",
+      image:
+        "https://media.istockphoto.com/id/519330110/photo/taj-mahal-agra-india-monument-of-love-in-blue-sky.jpg?s=612x612&w=0&k=20&c=Uma6Q7KduznA6jUKcSquFP1iHHiw8UXcZEYVLONrmaQ=",
     },
     {
       name: "Agra Fort",
       description: "UNESCO World Heritage site",
-      image: "https://media.istockphoto.com/id/520840182/photo/red-fort-lal-qila-with-indian-flag-delhi-india.jpg?s=612x612&w=0&k=20&c=pOIkOX7dnJh2zwJhF9HrknY7kwYZtDgOd1n98wkHCKQ=",
+      image:
+        "https://media.istockphoto.com/id/520840182/photo/red-fort-lal-qila-with-indian-flag-delhi-india.jpg?s=612x612&w=0&k=20&c=pOIkOX7dnJh2zwJhF9HrknY7kwYZtDgOd1n98wkHCKQ=",
     },
     {
       name: "Fatehpur Sikri",
       description: "Ancient city of victory",
-      image: "https://media.istockphoto.com/id/827043866/photo/fatehpur-sikri-city.jpg?s=612x612&w=0&k=20&c=yHA0K62z-cCXMkxB2CEshzcisVzmMILqIv-AStGIFso=",
+      image:
+        "https://media.istockphoto.com/id/827043866/photo/fatehpur-sikri-city.jpg?s=612x612&w=0&k=20&c=yHA0K62z-cCXMkxB2CEshzcisVzmMILqIv-AStGIFso=",
     },
     {
       name: "Akbar's Tomb",
       description: "Magnificent Mughal tomb",
-      image: "https://media.istockphoto.com/id/1299476939/photo/tomb-of-akbar-the-great-in-sikandra-near-agra-uttar-pradesh-india.jpg?s=612x612&w=0&k=20&c=Vcbf603OxW9MDNrnTJUVegb-D_h0cBBQTTa8rqm-nz4=",
+      image:
+        "https://media.istockphoto.com/id/1299476939/photo/tomb-of-akbar-the-great-in-sikandra-near-agra-uttar-pradesh-india.jpg?s=612x612&w=0&k=20&c=Vcbf603OxW9MDNrnTJUVegb-D_h0cBBQTTa8rqm-nz4=",
     },
   ],
   Jaipur: [
     {
       name: "Hawa Mahal",
       description: "Palace of Winds",
-      image: "https://media.istockphoto.com/id/482557081/photo/hawa-mahal-jaipur-india.jpg?s=612x612&w=0&k=20&c=A6qCUjoNH74nXCkB07RNgK3eIt2mun8PgsLPw9dNkVI=",
+      image:
+        "https://media.istockphoto.com/id/482557081/photo/hawa-mahal-jaipur-india.jpg?s=612x612&w=0&k=20&c=A6qCUjoNH74nXCkB07RNgK3eIt2mun8PgsLPw9dNkVI=",
     },
     {
       name: "Amber Fort",
       description: "Historic hilltop fortress",
-      image: "https://media.istockphoto.com/id/469788052/photo/amer-fort-near-jaipur.jpg?s=612x612&w=0&k=20&c=Rsd9v_Ix39ce8U9QKo3UnWfEMG1DUq4hnzh3APPi3g8=",
+      image:
+        "https://media.istockphoto.com/id/469788052/photo/amer-fort-near-jaipur.jpg?s=612x612&w=0&k=20&c=Rsd9v_Ix39ce8U9QKo3UnWfEMG1DUq4hnzh3APPi3g8=",
     },
     {
       name: "City Palace",
       description: "Royal residence",
-      image: "https://media.istockphoto.com/id/1744747131/photo/city-palace-jaipur-india.jpg?s=612x612&w=0&k=20&c=c9wj394FaZJyDw15IuzwHjzWDnExPik5zTvXGCaBOmY=",
+      image:
+        "https://media.istockphoto.com/id/1744747131/photo/city-palace-jaipur-india.jpg?s=612x612&w=0&k=20&c=c9wj394FaZJyDw15IuzwHjzWDnExPik5zTvXGCaBOmY=",
     },
   ],
   Haridwar: [
     {
       name: "Har Ki Pauri",
       description: "Sacred bathing ghat",
-      image: "https://media.istockphoto.com/id/1005227506/photo/har-ki-pauri-is-a-famous-ghat-on-the-banks-of-the-ganges-in-haridwar-india.jpg?s=612x612&w=0&k=20&c=QIBBZQaBiMKiR0i6AC-cYStVUTVssiiTu_buVEtFvJw=",
+      image:
+        "https://media.istockphoto.com/id/1005227506/photo/har-ki-pauri-is-a-famous-ghat-on-the-banks-of-the-ganges-in-haridwar-india.jpg?s=612x612&w=0&k=20&c=QIBBZQaBiMKiR0i6AC-cYStVUTVssiiTu_buVEtFvJw=",
     },
     {
       name: "Mansa Devi Temple",
       description: "Hill-top temple",
-      image: "https://media.istockphoto.com/id/166681127/photo/mansa-devi-temple.jpg?s=612x612&w=is&k=20&c=zoWiaFFOPwUx0yP4uam-Nn9oNb1KO-forpv_rtrPtYE=",
+      image:
+        "https://media.istockphoto.com/id/166681127/photo/mansa-devi-temple.jpg?s=612x612&w=is&k=20&c=zoWiaFFOPwUx0yP4uam-Nn9oNb1KO-forpv_rtrPtYE=",
     },
   ],
   Chandigarh: [
     {
       name: "Rock Garden",
       description: "Unique sculpture park",
-      image: "https://media.istockphoto.com/id/1407956379/photo/corner-of-ornamental-stony-garden-with-various-dwarf-coniferous-shrubs-and-deciduous-bushes.jpg?s=612x612&w=0&k=20&c=AmYgLOr2BgasewJE8lf_9gBKoM9qu0DqkQQ6yrafD6I=",
+      image:
+        "https://media.istockphoto.com/id/1407956379/photo/corner-of-ornamental-stony-garden-with-various-dwarf-coniferous-shrubs-and-deciduous-bushes.jpg?s=612x612&w=0&k=20&c=AmYgLOr2BgasewJE8lf_9gBKoM9qu0DqkQQ6yrafD6I=",
     },
     {
       name: "Sukhna Lake",
       description: "Artificial lake",
-      image: "https://media.istockphoto.com/id/1203392697/photo/sukhna-lake-chandigarh-at-sunrise.jpg?s=612x612&w=0&k=20&c=rabpQw7KhWTbYm3W9dndtERzvAYAjqVhEM4eJBRGrRQ=",
+      image:
+        "https://media.istockphoto.com/id/1203392697/photo/sukhna-lake-chandigarh-at-sunrise.jpg?s=612x612&w=0&k=20&c=rabpQw7KhWTbYm3W9dndtERzvAYAjqVhEM4eJBRGrRQ=",
     },
   ],
   Shimla: [
     {
       name: "Mall Road",
       description: "Main street shopping",
-      image: "https://media.istockphoto.com/id/943758616/photo/mall-road-shimla.jpg?s=612x612&w=0&k=20&c=rQYc8H5J-D-bWy5LZWy-fCti7S1qzRGaa_gGY8VPuog=",
+      image:
+        "https://media.istockphoto.com/id/943758616/photo/mall-road-shimla.jpg?s=612x612&w=0&k=20&c=rQYc8H5J-D-bWy5LZWy-fCti7S1qzRGaa_gGY8VPuog=",
     },
     {
       name: "Ridge",
       description: "Large open space",
-      image: "https://media.istockphoto.com/id/1475906590/photo/the-mall-ridge-road-shimla.jpg?s=612x612&w=0&k=20&c=Kl-9ytoFlBddMBiz6OrM5iRoLLiZ2u4ztrTrJPR4ek8=",
+      image:
+        "https://media.istockphoto.com/id/1475906590/photo/the-mall-ridge-road-shimla.jpg?s=612x612&w=0&k=20&c=Kl-9ytoFlBddMBiz6OrM5iRoLLiZ2u4ztrTrJPR4ek8=",
     },
   ],
   Manali: [
     {
       name: "Rohtang Pass",
       description: "Scenic mountain pass",
-      image: "https://media.istockphoto.com/id/1442248596/photo/lahaul-valley-in-himalayas-himachal-pradesh-india.jpg?s=612x612&w=0&k=20&c=5zTO8ChI2EXwKjrj4PFPJ3oKV93ydlyjDCymxzjlYZI=",
+      image:
+        "https://media.istockphoto.com/id/1442248596/photo/lahaul-valley-in-himalayas-himachal-pradesh-india.jpg?s=612x612&w=0&k=20&c=5zTO8ChI2EXwKjrj4PFPJ3oKV93ydlyjDCymxzjlYZI=",
     },
     {
       name: "Hadimba Temple",
       description: "Ancient wooden temple",
-      image: "https://media.istockphoto.com/id/1334792935/photo/hidimba-devi-or-hadimba-temple-manali.jpg?s=612x612&w=0&k=20&c=zE3wvq8_V9tAfsRiG_6rcg8zv8K3czbyI2J5vUAuQa8=",
+      image:
+        "https://media.istockphoto.com/id/1334792935/photo/hidimba-devi-or-hadimba-temple-manali.jpg?s=612x612&w=0&k=20&c=zE3wvq8_V9tAfsRiG_6rcg8zv8K3czbyI2J5vUAuQa8=",
     },
   ],
   Amritsar: [
     {
       name: "Golden Temple",
       description: "Holiest Sikh shrine",
-      image: "https://media.istockphoto.com/id/543179390/photo/golden-temple-the-main-sanctuary-of-sikhs-amritsar-india.jpg?s=612x612&w=0&k=20&c=s4bOWzg0e0ecBBPmuzIEShhrmMWFE16cnYlAZ7Nfdeg=",
+      image:
+        "https://media.istockphoto.com/id/543179390/photo/golden-temple-the-main-sanctuary-of-sikhs-amritsar-india.jpg?s=612x612&w=0&k=20&c=s4bOWzg0e0ecBBPmuzIEShhrmMWFE16cnYlAZ7Nfdeg=",
     },
     {
       name: "Jallianwala Bagh",
       description: "Historic memorial",
-      image: "https://media.istockphoto.com/id/469924336/photo/jallianwala-bagh-memorial.jpg?s=612x612&w=0&k=20&c=hlliyoRQA8t1Keivqn6vexVcLwFmrY1gZwwpAQsaBpc=",
+      image:
+        "https://media.istockphoto.com/id/469924336/photo/jallianwala-bagh-memorial.jpg?s=612x612&w=0&k=20&c=hlliyoRQA8t1Keivqn6vexVcLwFmrY1gZwwpAQsaBpc=",
     },
   ],
   Dehradun: [
     {
       name: "Robber's Cave",
       description: "Natural cave formation",
-      image: "https://media.istockphoto.com/id/852876558/photo/tranquil-outdoor-fall-scene-in-oklahoma.jpg?s=612x612&w=0&k=20&c=hEc38LFHA90OyGyuPyLYRmUGfj6fbB_Vg28jWhkbrNY=",
+      image:
+        "https://media.istockphoto.com/id/852876558/photo/tranquil-outdoor-fall-scene-in-oklahoma.jpg?s=612x612&w=0&k=20&c=hEc38LFHA90OyGyuPyLYRmUGfj6fbB_Vg28jWhkbrNY=",
     },
     {
       name: "Forest Research Institute",
       description: "Colonial architecture",
-      image: "https://media.istockphoto.com/id/530805512/photo/forest-research-institute.jpg?s=612x612&w=0&k=20&c=bLPlUbaxDClXc_-xC94IKFu_N9zNusEpUeaIg3n9iKM=",
+      image:
+        "https://media.istockphoto.com/id/530805512/photo/forest-research-institute.jpg?s=612x612&w=0&k=20&c=bLPlUbaxDClXc_-xC94IKFu_N9zNusEpUeaIg3n9iKM=",
     },
   ],
   Rishikesh: [
     {
       name: "Laxman Jhula",
       description: "Iconic suspension bridge",
-      image: "https://media.istockphoto.com/id/515802500/photo/bridge-in-rishikesh.jpg?s=612x612&w=0&k=20&c=Nt7T-FN_j1Glci2Y_yU6s-4HrsVF04VS6salIld6N8w=",
+      image:
+        "https://media.istockphoto.com/id/515802500/photo/bridge-in-rishikesh.jpg?s=612x612&w=0&k=20&c=Nt7T-FN_j1Glci2Y_yU6s-4HrsVF04VS6salIld6N8w=",
     },
     {
       name: "Beatles Ashram",
       description: "Historic meditation center",
-      image: "https://media.istockphoto.com/id/1096528010/photo/maharishi-mahesh-yogi-ashram-in-rishikesh-northern-india.jpg?s=612x612&w=0&k=20&c=Hk8kIV5ozeggpF9ws4B3AWJbIrqKFwVIRW-lLgzMW5g=",
+      image:
+        "https://media.istockphoto.com/id/1096528010/photo/maharishi-mahesh-yogi-ashram-in-rishikesh-northern-india.jpg?s=612x612&w=0&k=20&c=Hk8kIV5ozeggpF9ws4B3AWJbIrqKFwVIRW-lLgzMW5g=",
     },
   ],
   Jodhpur: [
     {
       name: "Mehrangarh Fort",
       description: "Massive hilltop fort",
-      image: "https://media.istockphoto.com/id/805563154/photo/mehrangharh-fort-and-jaswant-thada-mausoleum-in-jodhpur-rajasthan-india.jpg?s=612x612&w=0&k=20&c=5r9UxPkz9mIkfAIFPLyTwqBQyqSO7mcAdQtcqGHOboA=",
+      image:
+        "https://media.istockphoto.com/id/805563154/photo/mehrangharh-fort-and-jaswant-thada-mausoleum-in-jodhpur-rajasthan-india.jpg?s=612x612&w=0&k=20&c=5r9UxPkz9mIkfAIFPLyTwqBQyqSO7mcAdQtcqGHOboA=",
     },
     {
       name: "Umaid Bhawan Palace",
       description: "Royal residence",
-      image: "https://media.istockphoto.com/id/95524495/photo/umaid-bhawan-palace-jodhpur-rajasthan-india.jpg?s=612x612&w=0&k=20&c=HfHIeiDXJfiW-Q2JTzFIOrT8a3wroYecdJeU-nCt8XA=",
+      image:
+        "https://media.istockphoto.com/id/95524495/photo/umaid-bhawan-palace-jodhpur-rajasthan-india.jpg?s=612x612&w=0&k=20&c=HfHIeiDXJfiW-Q2JTzFIOrT8a3wroYecdJeU-nCt8XA=",
     },
   ],
   Udaipur: [
     {
       name: "City Palace",
       description: "Royal palace complex",
-      image: "https://media.istockphoto.com/id/487804438/photo/jaipur-india-chandra-mahal-palace-within-the-city-palace.jpg?s=612x612&w=0&k=20&c=nMPsdxL9iCyKhDFHmh8cE2ItkC8gp7awos6pL_t076s=",
+      image:
+        "https://media.istockphoto.com/id/487804438/photo/jaipur-india-chandra-mahal-palace-within-the-city-palace.jpg?s=612x612&w=0&k=20&c=nMPsdxL9iCyKhDFHmh8cE2ItkC8gp7awos6pL_t076s=",
     },
     {
       name: "Lake Pichola",
       description: "Artificial freshwater lake",
-      image: "https://media.istockphoto.com/id/1343698822/photo/udaipur-city-palace-beside-beautiful-lake-pichola-at-udaipur-rajasthan-india.jpg?s=612x612&w=0&k=20&c=i2Xvwz1tUVGEr3FKLam3jxNiyUSGEZ6e79zDSpoI96M=",
+      image:
+        "https://media.istockphoto.com/id/1343698822/photo/udaipur-city-palace-beside-beautiful-lake-pichola-at-udaipur-rajasthan-india.jpg?s=612x612&w=0&k=20&c=i2Xvwz1tUVGEr3FKLam3jxNiyUSGEZ6e79zDSpoI96M=",
     },
   ],
   Ayodhya: [
     {
       name: "Ram Mandir",
       description: "Grand temple complex",
-      image: "https://media.istockphoto.com/id/1450230477/photo/on-the-festival-of-deepawali-hindu-people-are-celebrating-deepotsav-in-ayodhya-uttar-pradesh.jpg?s=612x612&w=0&k=20&c=aONYbmPPKoYThK8KD1fSoYi-v-Y0coexCpacm5fEixw=",
+      image:
+        "https://media.istockphoto.com/id/1450230477/photo/on-the-festival-of-deepawali-hindu-people-are-celebrating-deepotsav-in-ayodhya-uttar-pradesh.jpg?s=612x612&w=0&k=20&c=aONYbmPPKoYThK8KD1fSoYi-v-Y0coexCpacm5fEixw=",
     },
     {
       name: "Hanuman Garhi",
       description: "Historic temple",
-      image: "https://media.istockphoto.com/id/2156027556/photo/statue-of-hanuman-in-shri-hanuman-garhi-temple.jpg?s=612x612&w=0&k=20&c=F5z2NoGVTnw7cq3Qglv_P4-pQ2__4ahj5ydVhu4nOUc=",
+      image:
+        "https://media.istockphoto.com/id/2156027556/photo/statue-of-hanuman-in-shri-hanuman-garhi-temple.jpg?s=612x612&w=0&k=20&c=F5z2NoGVTnw7cq3Qglv_P4-pQ2__4ahj5ydVhu4nOUc=",
     },
   ],
   Ahmedabad: [
     {
       name: "Sabarmati Ashram",
       description: "Gandhi's residence",
-      image: "https://media.istockphoto.com/id/2191721128/photo/sabarmati-gandhi-ashram-in-ahmedabad.jpg?s=612x612&w=0&k=20&c=qw9slkQQhuK19Z3uXL6WYIQNZCAGM_Ox7Cp9CNpXXgc=",
+      image:
+        "https://media.istockphoto.com/id/2191721128/photo/sabarmati-gandhi-ashram-in-ahmedabad.jpg?s=612x612&w=0&k=20&c=qw9slkQQhuK19Z3uXL6WYIQNZCAGM_Ox7Cp9CNpXXgc=",
     },
     {
       name: "Adalaj Stepwell",
       description: "Historic water structure",
-      image: "https://media.istockphoto.com/id/524006344/photo/adalaj-ki-vav.jpg?s=612x612&w=0&k=20&c=jt06dpxerICexezKYB_tlbuRThAQSdqVlt-xmjpXjkI=",
+      image:
+        "https://media.istockphoto.com/id/524006344/photo/adalaj-ki-vav.jpg?s=612x612&w=0&k=20&c=jt06dpxerICexezKYB_tlbuRThAQSdqVlt-xmjpXjkI=",
     },
   ],
 };
@@ -1614,7 +1714,7 @@ export const luxuryCars = [
     seating: "4",
     perDay: "₹15,000",
     minDays: "3",
-    securityDeposit: "₹25,000",
+    securityDeposit: "10%",
     rating: "4.9",
     reviews: "124",
     popular: true,
@@ -1632,7 +1732,7 @@ export const luxuryCars = [
     seating: "4",
     perDay: "₹16,000",
     minDays: "3",
-    securityDeposit: "₹25,000",
+    securityDeposit: "10%",
     rating: "4.8",
     reviews: "98",
     facilities: [
@@ -1649,7 +1749,7 @@ export const luxuryCars = [
     seating: "4",
     perDay: "₹17,000",
     minDays: "3",
-    securityDeposit: "₹30,000",
+    securityDeposit: "10%",
     rating: "4.9",
     reviews: "156",
     facilities: [
@@ -1666,7 +1766,7 @@ export const luxuryCars = [
     seating: "7",
     perDay: "₹12,000",
     minDays: "2",
-    securityDeposit: "₹20,000",
+    securityDeposit: "10%",
     rating: "4.7",
     reviews: "203",
     facilities: [
@@ -1686,7 +1786,7 @@ export const standardCars = [
     seating: "5",
     perDay: "₹2,500",
     minDays: "1",
-    securityDeposit: "₹4,000",
+    securityDeposit: "10%",
     rating: "4.5",
     reviews: "200",
     popular: true,
@@ -1694,11 +1794,12 @@ export const standardCars = [
   },
   {
     type: "Aura",
-    image:"https://stimg.cardekho.com/images/carexteriorimages/630x420/Hyundai/Aura/10126/1694588549389/front-left-side-47.jpg",
+    image:
+      "https://stimg.cardekho.com/images/carexteriorimages/630x420/Hyundai/Aura/10126/1694588549389/front-left-side-47.jpg",
     seating: "5",
     perDay: "₹3,000",
     minDays: "1",
-    securityDeposit: "₹4,500",
+    securityDeposit: "10%",
     rating: "4.6",
     reviews: "142",
     popular: false,
@@ -1711,34 +1812,35 @@ export const standardCars = [
     seating: "7",
     perDay: "₹4,000",
     minDays: "1",
-    securityDeposit: "₹6,500",
+    securityDeposit: "10%",
     rating: "4.7",
     reviews: "150",
     facilities: ["Well Maintained", "AC", "GPS Tracking", "24/7 Support"],
   },
   {
     type: "KIA Carens",
-    image:"https://www.kia.com/content/dam/kia2/in/en/images/our-vehicles/carens/gallery/exterior/04.png",
+    image:
+      "https://www.kia.com/content/dam/kia2/in/en/images/our-vehicles/carens/gallery/exterior/04.png",
     seating: "7",
     perDay: "₹4,400",
     minDays: "1",
-    securityDeposit: "₹6,800",
+    securityDeposit: "10%",
     rating: "4.7",
     reviews: "118",
     facilities: ["Well Maintained", "AC", "GPS Tracking", "24/7 Support"],
   },
   {
     type: "Innova Crysta",
-    image:"https://stimg.cardekho.com/images/carexteriorimages/930x620/Toyota/Innova-Crysta/9612/1697698611076/front-left-side-47.jpg",
+    image:
+      "https://stimg.cardekho.com/images/carexteriorimages/930x620/Toyota/Innova-Crysta/9612/1697698611076/front-left-side-47.jpg",
     seating: "7",
     perDay: "₹6,00",
     minDays: "1",
-    securityDeposit: "₹10,000",
+    securityDeposit: "10%",
     rating: "4.8",
     reviews: "425",
     facilities: ["Well Maintained", "AC", "GPS Tracking", "24/7 Support"],
   },
-
 ];
 
 export const phoneNumber = "7668570551";
