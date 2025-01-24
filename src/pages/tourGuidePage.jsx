@@ -213,7 +213,7 @@ const TourGuidePage = () => {
           <h3 className="text-2xl font-semibold text-yellow-800 mb-4 animate-slideUp">
             Need Instant Assistance?
           </h3>
-          <div className="flex justify-center space-x-4 animate-bounceIn">
+          <div className="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4 animate-bounceIn">
             <div className="bg-white p-6 rounded-lg shadow-md flex items-center">
               <MapPin className="text-yellow-600 mr-4 w-12 h-12" />
               <div>
