@@ -1843,4 +1843,167 @@ export const standardCars = [
   },
 ];
 
+export const tempoTravellers = [
+  {
+    type: "Tempo Traveller - 12",
+    image: "/images/car/tempo_traveller.jpeg",
+    seating: "12",
+    perDay: "₹5,500",
+    minDays: "1",
+    securityDeposit: "10%",
+    rating: "4.6",
+    reviews: "95",
+    facilities: ["AC", "Comfortable Seating", "GPS Tracking", "24/7 Support"]
+  },
+  {
+    type: "Tempo Traveller - 16",
+    image: "/images/car/tempo-front.jpeg",
+    seating: "16",
+    perDay: "₹6,000",
+    minDays: "1",
+    securityDeposit: "10%",
+    rating: "4.7",
+    reviews: "78",
+    facilities: ["AC", "Comfortable Seating", "GPS Tracking", "24/7 Support"]
+  },
+  {
+    type: "Tempo Traveller - 20",
+    image: "/images/car/tempo-side.jpeg",
+    seating: "20",
+    perDay: "₹6,500",
+    minDays: "1",
+    securityDeposit: "10%",
+    rating: "4.5",
+    reviews: "62",
+    facilities: ["AC", "Comfortable Seating", "GPS Tracking", "24/7 Support"]
+  },
+  {
+    type: "Tempo Traveller - 26",
+    image: "/images/car/tempo-side2.jpeg",
+    seating: "26",
+    perDay: "₹7,500",
+    minDays: "1",
+    securityDeposit: "10%",
+    rating: "4.4",
+    reviews: "53",
+    facilities: ["AC", "Comfortable Seating", "GPS Tracking", "24/7 Support"]
+  }
+];
+
+export const luxuryBuses = [
+  {
+    type: "Luxury Bus - 35",
+    image: "https://5.imimg.com/data5/AU/DW/MY-3525736/21740577_1735207289822745_777045808454716075_n.jpg",
+    seating: "35",
+    perDay: "₹18,000",
+    minDays: "1",
+    securityDeposit: "10%",
+    rating: "4.6",
+    reviews: "85",
+    facilities: ["AC", "Comfortable Seats", "Entertainment System", "WiFi", "24/7 Support"]
+  },
+  {
+    type: "Luxury Bus - 40",
+    image: "https://media.istockphoto.com/id/1402780845/photo/caetano-levante.jpg?s=612x612&w=0&k=20&c=WDGvGvRHzbYmw2hciGn688dbtKBzkjCXUDTxytXtYgg=",
+    seating: "40",
+    perDay: "₹20,000",
+    minDays: "1",
+    securityDeposit: "10%",
+    rating: "4.7",
+    reviews: "72",
+    facilities: ["AC", "Comfortable Seats", "Entertainment System", "WiFi", "24/7 Support"]
+  },
+  {
+    type: "Luxury Bus - 45",
+    image: "https://media.istockphoto.com/id/1189925691/photo/setra-s519hd.jpg?s=612x612&w=0&k=20&c=306VUyVDmK2TY3Qw9xCRtWwranpfgAvXxi25wbe5egs=",
+    seating: "45",
+    perDay: "₹22,000",
+    minDays: "1",
+    securityDeposit: "10%",
+    rating: "4.8",
+    reviews: "65",
+    facilities: ["AC", "Comfortable Seats", "Entertainment System", "WiFi", "24/7 Support"]
+  },
+  {
+    type: "Luxury Bus - 49",
+    image: "https://media.istockphoto.com/id/124870370/photo/touring-america-ii.jpg?s=612x612&w=0&k=20&c=R4jc_JhLBKnxAc3xqYfT5HNKqGabXOIHIJ6u-7iKrdk=",
+    seating: "49",
+    perDay: "₹25,000",
+    minDays: "1",
+    securityDeposit: "10%",
+    rating: "4.9",
+    reviews: "58",
+    facilities: ["AC", "Comfortable Seats", "Entertainment System", "WiFi", "24/7 Support"]
+  },
+  {
+    type: "Luxury Bus - 55",
+    image: "https://media.istockphoto.com/id/173002523/photo/sleek-red-bus.jpg?s=612x612&w=0&k=20&c=UNYSvPJwe5ebhpE4fX7q6asyeEPZTznET_gJqCdacHA=",
+    seating: "55",
+    perDay: "₹28,000",
+    minDays: "1",
+    securityDeposit: "10%",
+    rating: "4.7",
+    reviews: "47",
+    facilities: ["AC", "Comfortable Seats", "Entertainment System", "WiFi", "24/7 Support"]
+  }
+];
+
+export const simpleBuses = [
+  {
+    type: "Simple Bus - 35",
+    image: "https://res.cloudinary.com/dnreeobav/image/fetch/c_scale,q_30,w_350,f_auto/l_text:Arial_20_bold:TrucksBuses.com,x_70,y_100,co_rgb:ffffff/https://www.trucksbuses.com/uploads/Ashok%20Leyland%20Lynx%20Smart%2028%20Seater%20Staff%20Bus.jpg",
+    seating: "35",
+    perDay: "₹12,000",
+    minDays: "1",
+    securityDeposit: "10%",
+    rating: "4.3",
+    reviews: "95",
+    facilities: ["Basic Seating", "Standard AC", "Basic Support"]
+  },
+  {
+    type: "Simple Bus - 40",
+    image: "https://4.imimg.com/data4/DE/EI/MY-26708523/skyline-school-bus-40.jpg",
+    seating: "40",
+    perDay: "₹14,000",
+    minDays: "1",
+    securityDeposit: "10%",
+    rating: "4.4",
+    reviews: "82",
+    facilities: ["Basic Seating", "Standard AC", "Basic Support"]
+  },
+  {
+    type: "Simple Bus - 45",
+    image: "https://res.cloudinary.com/dnreeobav/image/fetch/c_scale,q_30,w_350,f_auto/l_text:Arial_20_bold:TrucksBuses.com,x_70,y_100,co_rgb:ffffff/https://www.trucksbuses.com/uploads/Ashok%20Leyland%20Lynx%20Smart%2028%20Seater%20Staff%20Bus.jpg",
+    seating: "45",
+    perDay: "₹16,000",
+    minDays: "1",
+    securityDeposit: "10%",
+    rating: "4.5",
+    reviews: "75",
+    facilities: ["Basic Seating", "Standard AC", "Basic Support"]
+  },
+  {
+    type: "Simple Bus - 49",
+    image: "https://media.istockphoto.com/id/1616050163/photo/white-intercity-bus-in-the-parking-lot.jpg?s=612x612&w=0&k=20&c=jcP2YcXzYjFy1A1645zD27Dex54vDkQBjL-5AXVhdas=",
+    seating: "49",
+    perDay: "₹18,000",
+    minDays: "1",
+    securityDeposit: "10%",
+    rating: "4.6",
+    reviews: "68",
+    facilities: ["Basic Seating", "Standard AC", "Basic Support"]
+  },
+  {
+    type: "Simple Bus - 55",
+    image: "https://5.imimg.com/data5/CM/YM/UG/SELLER-46827032/staff-bus-500x500.jpg",
+    seating: "55",
+    perDay: "₹20,000",
+    minDays: "1",
+    securityDeposit: "10%",
+    rating: "4.4",
+    reviews: "57",
+    facilities: ["Basic Seating", "Standard AC", "Basic Support"]
+  }
+];
+
 export const phoneNumber = "7668570551";
