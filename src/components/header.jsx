@@ -92,7 +92,7 @@ const Header = () => {
                   <span className="text-gray-700 text-xs">24x7</span>
                 </div>
                 <div className="text-gray-700 text-xs font-medium bg-black text-white py-1.5 px-2 hover:bg-gray-800 transition-colors">
-                  090 4545 0000
+                +91 76685 70551
                 </div>
               </div>
               <button
