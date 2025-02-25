@@ -36,7 +36,7 @@ const Home = () => {
         />
 
         <motion.img
-          src="/images/home/banner2.jpg"
+          src="/images/home/banner3.jpg"
           alt="banner"
           className="banner-image w-full h-full object-cover object-center"
           initial={{ scale: 1.1 }}

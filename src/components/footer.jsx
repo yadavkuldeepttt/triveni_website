@@ -118,7 +118,7 @@ const Footer = () => {
                     <Phone className="w-4 h-4 text-black" />
                   </div>
                   <div>
-                    <p>090 4545 0000</p>
+                    <p>+91 76685 70551</p>
                   </div>
                 </div>
                 <div className="flex items-center mb-4 space-x-3 hover:text-[#FACF2D] transition-colors duration-300">
