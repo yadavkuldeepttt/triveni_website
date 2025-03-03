@@ -59,6 +59,33 @@ const VehicleDetails = () => {
     ],
   };
 
+  const tempoTravellers = [
+    {
+      title: "16 Seater Tempo Traveller by Triveni Cabs",
+      capacity: "Capacity: 16 guests",
+      fare: "Fare: Rs 22 per km",
+      minFare: "Minimum per day fare: Rs 5500 for outstation & Rs 4000-4500 for local Jaipur",
+      features: ["Complete AC", "Good luggage space for 16 pax"],
+      contact: "+91 76685 70551",
+    },
+    {
+      title: "22 Seater Tempo Traveller by Triveni Cabs",
+      capacity: "Capacity: 22 guests",
+      fare: "Fare: Rs 28-30 per km",
+      minFare: "Minimum per day fare: Rs 7000 for outstation & Rs 5000 for local Jaipur",
+      features: ["AC at front and back", "Good luggage space"],
+      contact: "+91 76685 70551",
+    },
+    {
+      title: "18 Seater Tempo Traveller by Triveni Cabs",
+      capacity: "Capacity: 18 guests",
+      fare: "Fare: Rs 25 per km",
+      minFare: "Minimum per day fare: Rs 5500 for outstation & Rs 4000-4500 for local Jaipur",
+      features: ["Complete AC", "Good luggage space for 18 pax"],
+      contact: "+91 76685 70551",
+    },
+  ];
+
   // Get relevant seating options based on vehicle type
   const getSeatingOptions = () => {
     if (slug === "tempo-traveller") return seatingOptions.tempo;
@@ -580,6 +607,47 @@ const VehicleDetails = () => {
             </div>
           </div>
         </motion.div>
+
+      
+      <div className="max-w-7xl mx-auto px-4 py-16 bg-[#FFF8DC]">
+      <motion.div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div className="py-16 bg-gradient-to-r from-yellow-100 to-yellow-100 p-10 rounded-xl">
+          <h2 className="text-3xl font-bold text-center mb-8 text-gray-900">
+            Our Available Tempo Travellers
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {tempoTravellers.map((traveller, index) => (
+              <div
+                key={index}
+                className="bg-gradient-to-b from-yellow-50 to-yellow-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all"
+              >
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">
+                  {traveller.title}
+                </h3>
+                <p className="text-gray-700 mb-2">{traveller.capacity}</p>
+                <p className="text-gray-700 mb-2">{traveller.fare}</p>
+                <p className="text-gray-700 mb-4">{traveller.minFare}</p>
+                <ul className="mb-4">
+                  {traveller.features.map((feature, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-green-500" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-sm text-gray-600 mb-2">
+                  Contact: {traveller.contact}
+                </p>
+                <button onClick={handleClick} className="w-full bg-black text-white py-2 rounded-md hover:bg-yellow-500 hover:text-black transition-all">
+                  Book Now
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+    </div>
+   
       </div>
     </motion.div>
   );
