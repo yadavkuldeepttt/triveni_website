@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Car, MapPin, Calendar, Clock, Plane } from "lucide-react";
 import BookingTrip from "./bookingTrip";
 import SuccessModal from "./successModal";
@@ -19,6 +19,31 @@ const Trip = () => {
     returnDate: "",
     hours: "2",
   });
+
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        async (position) => {
+          const { latitude, longitude } = position.coords;
+          try {
+            const response = await fetch(
+              `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
+            );
+            const data = await response.json();
+            setFormData((prev) => ({
+              ...prev,
+              yourLocation: data.display_name || "Location not found",
+            }));
+          } catch (error) {
+            console.error("Error fetching location name:", error);
+          }
+        },
+        (error) => {
+          console.error("Geolocation error:", error);
+        }
+      );
+    }
+  }, []);
 
   const tabs = [
     { id: "outstation", label: "Outstation", icon: Car },
@@ -105,22 +130,23 @@ const Trip = () => {
   const renderFormFields = () => {
     const baseFields = (
       <>
-        <div className="flex-1">
-          <label className="block text-start text-[16px] tracking-[0.06rem] uppercase font-semibold text-gray-800 mb-2">
-            Pickup Point
-          </label>
-          <div className="relative">
-            <input
-              type="text"
-              name="pickupPoint"
-              value={formData.pickupPoint}
-              onChange={handleInputChange}
-              className="w-full py-3 border-b-2 text-sm tracking-[0.06rem] border-black bg-transparent focus:outline-none pl-8"
-              placeholder="Enter pickup location"
-            />
-            <MapPin className="absolute left-0 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500" />
-          </div>
-        </div>
+      <div className="flex-1">
+      <label className="block text-start text-[16px] tracking-[0.06rem] uppercase font-semibold text-gray-800 mb-2">
+        Your Location
+      </label>
+      <div className="relative flex items-center gap-2">
+        <MapPin className="w-5 h-5 text-gray-500" />
+        <input
+          type="text"
+          name="yourLocation"
+          value={formData.yourLocation}
+          onChange={handleInputChange}
+          className="w-full py-3 border-b-2 text-sm tracking-[0.06rem] border-black bg-transparent focus:outline-none"
+          placeholder="Fetching your location..."
+          readOnly
+        />
+      </div>
+    </div>
 
         <div className="flex-1">
           <label className="block text-start text-[16px] tracking-[0.06rem] uppercase font-semibold text-gray-800 mb-2">
