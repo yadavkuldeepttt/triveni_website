@@ -3,6 +3,13 @@ import { Car, MapPin, Calendar, Clock, Plane } from "lucide-react";
 import BookingTrip from "./bookingTrip";
 import SuccessModal from "./successModal";
 import { vehiclesServices } from "../../utils/data";
+import { X  } from "lucide-react";
+
+const CITIES = [
+  "Delhi", "Agra", "Jaipur", "Haridwar", "Chandigarh", "Shimla",
+  "Manali", "Amritsar", "Dehradun", "Rishikesh", "Jodhpur", 
+  "Udaipur", "Ayodhya", "Ahmedabad"
+];
 
 const Trip = () => {
   const [tab, setTab] = useState("local");
@@ -10,6 +17,9 @@ const Trip = () => {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [bookingSuccess, setBookingSuccess] = useState(false);
   const [selectedCab, setSelectedCab] = useState("");
+  const [selectedCity, setSelectedCity] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
+  
   const [formData, setFormData] = useState({
     pickupPoint: "",
     pickupDate: "",
@@ -20,30 +30,6 @@ const Trip = () => {
     hours: "2",
   });
 
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        async (position) => {
-          const { latitude, longitude } = position.coords;
-          try {
-            const response = await fetch(
-              `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
-            );
-            const data = await response.json();
-            setFormData((prev) => ({
-              ...prev,
-              yourLocation: data.display_name || "Location not found",
-            }));
-          } catch (error) {
-            console.error("Error fetching location name:", error);
-          }
-        },
-        (error) => {
-          console.error("Geolocation error:", error);
-        }
-      );
-    }
-  }, []);
 
   const tabs = [
     { id: "outstation", label: "Outstation", icon: Car },
@@ -113,6 +99,20 @@ const Trip = () => {
     }
   };
 
+  const handleCitySelect = (city) => {
+    setSelectedCity(city);
+    setSearchTerm(""); // Reset the search term after selection
+  };
+  
+
+  const handleCityRemove = () => {
+    setSelectedCity(null);
+  };
+
+  const filteredCities = CITIES.filter((city) =>
+    city.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   const resetForm = () => {
     setFormData({
       pickupPoint: "",
@@ -132,21 +132,47 @@ const Trip = () => {
       <>
       <div className="flex-1">
       <label className="block text-start text-[16px] tracking-[0.06rem] uppercase font-semibold text-gray-800 mb-2">
-        Your Location
-      </label>
-      <div className="relative flex items-center gap-2">
-        <MapPin className="w-5 h-5 text-gray-500" />
-        <input
-          type="text"
-          name="yourLocation"
-          value={formData.yourLocation}
-          onChange={handleInputChange}
-          className="w-full py-3 border-b-2 text-sm tracking-[0.06rem] border-black bg-transparent focus:outline-none"
-          placeholder="Fetching your location..."
-          readOnly
-        />
-      </div>
+       YOUR LOCATION CITY
+    </label>
+  
+  {selectedCity ? (
+    <div className="inline-flex items-center bg-purple-600 text-white text-sm font-medium px-3 py-1.5 rounded-full">
+    {selectedCity}
+    <X
+      className="w-4 h-4 ml-2 cursor-pointer text-white"
+      onClick={handleCityRemove}
+    />
+  </div>
+  ) : (
+    <div className="relative">
+      <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500" />
+      <input
+        type="text"
+        placeholder="Search City"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="w-[250px] py-3 border-b-2 border-black bg-transparent focus:outline-none"
+      />
+      
+      {/* Check if cities are available before mapping */}
+      {searchTerm && filteredCities?.length > 0 && (
+        <div className="absolute bg-white border w-[250px] mt-1 shadow-md max-h-48 overflow-y-auto z-10 rounded-md">
+          {filteredCities.map((city) => (
+            <div
+              key={city}
+              onClick={() => handleCitySelect(city)}
+              className="px-4 py-2 cursor-pointer hover:bg-gray-100"
+            >
+              {city}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
+  )}
+</div>
+
+
 
         <div className="flex-1">
           <label className="block text-start text-[16px] tracking-[0.06rem] uppercase font-semibold text-gray-800 mb-2">
