@@ -1,104 +1,188 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
+// Hardcoded distances between major Indian cities (in km)
+const cityDistances = {
+  Delhi: {
+    Mumbai: 1400,
+    Bangalore: 2100,
+    Kolkata: 1500,
+    Chennai: 2200,
+    Hyderabad: 1550,
+  },
+  Mumbai: {
+    Delhi: 1400,
+    Bangalore: 1000,
+    Kolkata: 2050,
+    Chennai: 1300,
+    Hyderabad: 710,
+  },
+  Bangalore: {
+    Delhi: 2100,
+    Mumbai: 1000,
+    Kolkata: 1850,
+    Chennai: 350,
+    Hyderabad: 570,
+  },
+  Kolkata: {
+    Delhi: 1500,
+    Mumbai: 2050,
+    Bangalore: 1850,
+    Chennai: 1650,
+    Hyderabad: 1500,
+  },
+  Chennai: {
+    Delhi: 2200,
+    Mumbai: 1300,
+    Bangalore: 350,
+    Kolkata: 1650,
+    Hyderabad: 630,
+  },
+  Hyderabad: {
+    Delhi: 1550,
+    Mumbai: 710,
+    Bangalore: 570,
+    Kolkata: 1500,
+    Chennai: 630,
+  },
+};
+
+const cabTypes = {
+  sedan: {
+    type: "Sedan",
+    costPerKm: 10,
+    includedKm: 1500,
+    extraFarePerKm: 12,
+    fuelCharges: "Included",
+    driverCharges: "Included",
+    nightCharges: "Included",
+  },
+  suv: {
+    type: "SUV",
+    costPerKm: 15,
+    includedKm: 1400,
+    extraFarePerKm: 18,
+    fuelCharges: "Included",
+    driverCharges: "Included",
+    nightCharges: "Included",
+  },
+  tempoTraveller: {
+    type: "Tempo Traveller",
+    costPerKm: 20,
+    includedKm: 1600,
+    extraFarePerKm: 22,
+    fuelCharges: "Included",
+    driverCharges: "Included",
+    nightCharges: "Included",
+  },
+  luxuryBus: {
+    type: "Luxury Bus",
+    costPerKm: 30,
+    includedKm: 1700,
+    extraFarePerKm: 35,
+    fuelCharges: "Included",
+    driverCharges: "Included",
+    nightCharges: "Included",
+  },
+  bus: {
+    type: "Bus",
+    costPerKm: 25,
+    includedKm: 1650,
+    extraFarePerKm: 28,
+    fuelCharges: "Included",
+    driverCharges: "Included",
+    nightCharges: "Included",
+  },
+};
 
 const BookingTrip = ({
   isOpen,
   onClose,
   bookingDetails,
-  cabTypes,
   selectedCab,
   setSelectedCab,
   onConfirm,
 }) => {
-  const { tab, serviceType, serviceTypes, formData } = bookingDetails;
+  const { formData, selectedCity } = bookingDetails;
+  const [distance, setDistance] = useState(null);
+  const [totalCost, setTotalCost] = useState(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  // Calculate distance based on hard-coded values
+  useEffect(() => {
+    if (selectedCity && formData?.destinationCity) {
+      const distanceValue =
+        cityDistances[selectedCity]?.[formData.destinationCity] || null;
+      setDistance(distanceValue);
+    }
+  }, [selectedCity, formData?.destinationCity]);
+
+  // Calculate total cost when cab is selected
+  useEffect(() => {
+    if (distance && selectedCab) {
+      const cab = cabTypes[selectedCab];
+      if (cab) {
+        const { costPerKm, includedKm, extraFarePerKm } = cab;
+
+        let calculatedCost = 0;
+
+        // Calculate base cost
+        if (distance <= includedKm) {
+          calculatedCost = distance * costPerKm;
+        } else {
+          // Calculate extra cost for distance exceeding included kilometers
+          const extraDistance = distance - includedKm;
+          calculatedCost =
+            includedKm * costPerKm + extraDistance * extraFarePerKm;
+        }
+
+        setTotalCost(calculatedCost);
+      }
+    }
+  }, [distance, selectedCab]);
 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-90  z-50 flex items-center justify-center p-4">
-      <div className="bg-white overflow-auto min-h-[70vh] scroll max-sm:max-h-[55vh] rounded-lg w-full max-w-2xl relative">
+    <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
+      <div className="bg-white overflow-auto min-h-[70vh] rounded-lg w-full max-w-2xl relative">
         <div className="p-6 space-y-8">
           {/* Header */}
           <div className="flex justify-between items-center">
-            <div className="flex flex-col items-start">
-              <h2 className="text-xl font-bold text-gray-900">
-                Booking Details
-              </h2>
-              <p className="text-gray-500 mt-1">Review and confirm your trip</p>
-            </div>
-            <button
-              onClick={onClose}
-              className="p-2 hover:bg-gray-100 rounded-full"
-            >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M15 5L5 15M5 5L15 15"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-              </svg>
+            <h2 className="text-xl font-bold text-gray-900">Booking Details</h2>
+            <button onClick={onClose} className="p-2 hover:bg-gray-100 rounded-full">
+              ✖️
             </button>
           </div>
 
-          {/* Service Info Card */}
+          {/* Service Info */}
           <div className="bg-gray-50 rounded-lg p-6">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="bg-blue-50 p-3 rounded-full">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="text-blue-600"
-                >
-                  <path
-                    d="M19 17H5V15H19V17ZM19 13H5V11H19V13ZM19 9H5V7H19V9Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </div>
-              <div className="flex items-start flex-col">
-                <h3 className="font-semibold text-lg">Service Details</h3>
-                <p className="text-gray-500 text-sm">
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)} ·{" "}
-                  {serviceTypes[tab].find((s) => s.id === serviceType)?.label}
-                </p>
-              </div>
-            </div>
-
-            <div className="h-px bg-gray-200 my-4" />
-
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <p className="text-sm font-medium text-gray-500">Pickup</p>
-                <p className="mt-1 capitalize">{formData.pickupPoint}</p>
+                <p className="mt-1 capitalize">{selectedCity || "N/A"}</p>
               </div>
-              {formData.destinationCity && (
+              {formData?.destinationCity && (
                 <div>
-                  <p className="text-sm font-medium capitalize text-gray-500">
-                    Destination
-                  </p>
+                  <p className="text-sm font-medium text-gray-500">Destination</p>
                   <p className="mt-1 capitalize">{formData.destinationCity}</p>
                 </div>
               )}
-              <div>
-                <p className="text-sm font-medium text-gray-500">Date & Time</p>
-                <p className="mt-1">
-                  {formData.pickupDate} at {formData.pickupTime}
-                </p>
-              </div>
-              {formData.terminalNumber && (
+              {formData?.destinationCity && (
                 <div>
-                  <p className="text-sm font-medium text-gray-500">Terminal</p>
-                  <p className="mt-1">{formData.terminalNumber}</p>
+                  <p className="text-sm font-medium text-gray-500">pickup Date</p>
+                  <p className="mt-1 capitalize">{formData.pickupDate}</p>
+                </div>
+              )}
+              {formData?.destinationCity && (
+                <div>
+                  <p className="text-sm font-medium text-gray-500">pickupTime</p>
+                  <p className="mt-1 capitalize">{formData.pickupTime}</p>
+                </div>
+              )}
+              {distance && (
+                <div>
+                  <p className="text-sm font-medium text-gray-500">Distance</p>
+                  <p className="mt-1">{distance} km</p>
                 </div>
               )}
             </div>
@@ -107,70 +191,68 @@ const BookingTrip = ({
           {/* Cab Selection */}
           <div className="bg-gray-50 rounded-lg p-6">
             <h3 className="font-semibold text-lg mb-4">Select Your Cab</h3>
-            <div className="relative text-gray-800">
-              <button
-                className="w-full text-gray-800 px-4 py-2 bg-white border rounded-lg text-left flex justify-between items-center"
-                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              >
-                <span>
-                  {selectedCab
-                    ? cabTypes[selectedCab].type
-                    : "Choose a cab type"}
-                </span>
-                <svg
-                  className={`w-4 h-4 transition-transform duration-200 ${
-                    isDropdownOpen ? "rotate-180" : ""
-                  }`}
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </button>
-
-              {isDropdownOpen && (
-                <div className="absolute text-gray-800 w-full mt-1 bg-white border rounded-lg shadow-lg z-10">
-                  {Object.entries(cabTypes).map(([key, cab]) => (
-                    <button
-                      key={key}
-                      className="w-full px-4 py-2 text-left hover:bg-gray-50 flex justify-between items-center"
-                      onClick={() => {
-                        setSelectedCab(key);
-                        setIsDropdownOpen(false);
-                      }}
-                    >
-                      <span>{cab.type}</span>
-                      <span className="text-gray-800">{cab.price}</span>
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-            {selectedCab && (
-              <p className="mt-2 text-sm text-gray-800">
-                {cabTypes[selectedCab].features}
-              </p>
-            )}
+            <select
+              value={selectedCab || ""}
+              onChange={(e) => setSelectedCab(e.target.value)}
+              className="w-full border px-4 py-2 rounded-lg"
+            >
+              <option value="">Choose a cab type</option>
+              {Object.entries(cabTypes).map(([key, cab]) => (
+                <option key={key} value={key}>
+                  {cab.type} - ₹{cab.costPerKm}/km
+                </option>
+              ))}
+            </select>
           </div>
+
+          {/* Total Cost */}
+          {totalCost !== null && (
+            <div className="mt-4 font-semibold text-lg">
+              Total Cost: ₹{totalCost.toFixed(2)}
+            </div>
+          )}
+
+          {selectedCab && (
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="font-semibold text-lg mb-4">Selected Car Details</h3>
+              <div className="text-gray-800 space-y-2">
+                <p >
+                  <strong >Car Type:</strong> <span className="text-green-600">{cabTypes[selectedCab].type}</span>
+                </p>
+                <p>
+                  <strong>Cost per Km:</strong> <span className="text-green-600"> ₹{cabTypes[selectedCab].costPerKm}</span>
+                </p>
+                <p>
+                  <strong>Included Km:</strong> <span className="text-green-600">{cabTypes[selectedCab].includedKm} km</span>
+                </p>
+                <p>
+                  <strong>Extra Fare:</strong> <span className="text-green-600">₹{cabTypes[selectedCab].extraFarePerKm}/km</span>
+                </p>
+                <p>
+                  <strong>Fuel Charges:</strong> <span className="text-green-600"> {cabTypes[selectedCab].fuelCharges}</span>
+                </p>
+                <p>
+                  <strong>Driver Charges:</strong> <span className="text-green-600">{cabTypes[selectedCab].driverCharges}</span>
+                </p>
+                <p>
+                  <strong>Night Charges:</strong> <span className="text-green-600">{cabTypes[selectedCab].nightCharges} </span>
+                </p>
+              </div>
+            </div>
+          )}
 
           {/* Action Buttons */}
           <div className="flex gap-4">
             <button
               onClick={onClose}
-              className="flex-1 py-3 px-4 border border-gray-300 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+              className="flex-1 py-3 px-4 border border-gray-300 rounded-lg"
             >
               Cancel
             </button>
             <button
               onClick={onConfirm}
-              className={`flex-1 py-3 px-4 rounded-lg text-white font-medium transition-colors ${
-                selectedCab
-                  ? "bg-blue-600 hover:bg-blue-700"
-                  : "bg-gray-400 cursor-not-allowed"
+              className={`flex-1 py-3 px-4 rounded-lg text-white ${
+                selectedCab ? "bg-blue-600 hover:bg-blue-700" : "bg-gray-400"
               }`}
               disabled={!selectedCab}
             >

@@ -133,7 +133,7 @@ const Trip = () => {
       <div className="flex-1">
       <label className="block text-start text-[16px] tracking-[0.06rem] uppercase font-semibold text-gray-800 mb-2">
        YOUR LOCATION CITY
-    </label>
+      </label>
   
   {selectedCity ? (
     <div className="inline-flex items-center bg-purple-600 text-white text-sm font-medium px-3 py-1.5 rounded-full">
@@ -537,6 +537,7 @@ const Trip = () => {
             serviceType,
             serviceTypes,
             formData,
+            selectedCity,
           }}
           cabTypes={getFilteredVehicles()} // Pass the filtered vehicles here
           selectedCab={selectedCab}
