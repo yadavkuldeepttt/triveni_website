@@ -1706,6 +1706,116 @@ export const touristSpots = {
   ],
 };
 
+export const touristSpotsDescrition = {
+  Delhi: [
+    {
+      name: "Red Fort",
+      description: "Historic Mughal fortress, symbol of India's independence, featuring red sandstone walls and impressive architecture.",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC095mZ7NIvlYwo3mSTY8MSKGit9_dv4FTbw&s",
+    },
+    {
+      name: "Qutub Minar",
+      description: "UNESCO World Heritage site, a 73-meter tall minaret built in 1193 with intricate carvings and verses from the Quran.",
+      image:
+        "https://media.gettyimages.com/id/165204592/photo/qutub-minar-delhi-india.jpg?s=612x612&w=0&k=20&c=YvFLPmQmlgCyX7RGZA1VpKctdC6QsChINzLSMDPNI9k=",
+    },
+    {
+      name: "India Gate",
+      description: "War memorial built in honor of Indian soldiers who died in World War I, surrounded by lush gardens and fountains.",
+      image:
+        "https://media.gettyimages.com/id/522675372/photo/india-gate-a-national-monument-is-a-massive-red-sandstone-arch-and-the-indian-armys-tomb-of.jpg?s=612x612&w=0&k=20&c=YPBiK0nvpg0XvryE2PEfJp0gpLCXfPjoyQvRPgTQl8A=",
+    },
+    {
+      name: "Humayun's Tomb",
+      description: "Magnificent Mughal architecture and a precursor to the Taj Mahal, built in 1570 as the tomb of Emperor Humayun.",
+      image:
+        "https://media.istockphoto.com/id/532703419/photo/humayuns-tomb-delhi-india.jpg?s=612x612&w=0&k=20&c=xLOQ5pzw0NJ-TSjhCmDViCygbE92coHOQREtRaYEqyI=",
+    },
+    {
+      name: "Lotus Temple",
+      description: "Modern architectural marvel and a Bahá'í House of Worship, known for its lotus-shaped design and peaceful ambiance.",
+      image:
+        "https://media.istockphoto.com/id/487221269/photo/night-view-of-lotus-temple.jpg?s=612x612&w=0&k=20&c=Y6GASX6ZR0D2rqi3AeBCn574xhRPOz1ENiWp5dgmAXI=",
+    },
+  ],
+  Agra: [
+    {
+      name: "Taj Mahal",
+      description: "Wonder of the World, built by Emperor Shah Jahan in memory of his wife Mumtaz Mahal. Famous for its white marble and symmetry.",
+      image:
+        "https://media.istockphoto.com/id/519330110/photo/taj-mahal-agra-india-monument-of-love-in-blue-sky.jpg?s=612x612&w=0&k=20&c=Uma6Q7KduznA6jUKcSquFP1iHHiw8UXcZEYVLONrmaQ=",
+    },
+    {
+      name: "Agra Fort",
+      description: "Massive 16th-century fortress of red sandstone, housing royal residences, mosques, and audience halls.",
+      image:
+        "https://media.istockphoto.com/id/520840182/photo/red-fort-lal-qila-with-indian-flag-delhi-india.jpg?s=612x612&w=0&k=20&c=pOIkOX7dnJh2zwJhF9HrknY7kwYZtDgOd1n98wkHCKQ=",
+    },
+    {
+      name: "Fatehpur Sikri",
+      description: "Ancient city built by Emperor Akbar in the 16th century, featuring impressive palaces, mosques, and courtyards.",
+      image:
+        "https://media.istockphoto.com/id/827043866/photo/fatehpur-sikri-city.jpg?s=612x612&w=0&k=20&c=yHA0K62z-cCXMkxB2CEshzcisVzmMILqIv-AStGIFso=",
+    },
+    {
+      name: "Akbar's Tomb",
+      description: "Final resting place of Emperor Akbar, showcasing unique Mughal architectural elements and intricate red sandstone work.",
+      image:
+        "https://media.istockphoto.com/id/1299476939/photo/tomb-of-akbar-the-great-in-sikandra-near-agra-uttar-pradesh-india.jpg?s=612x612&w=0&k=20&c=Vcbf603OxW9MDNrnTJUVegb-D_h0cBBQTTa8rqm-nz4=",
+    },
+  ],
+  Jaipur: [
+    {
+      name: "Hawa Mahal",
+      description: "Palace of Winds, built in 1799, known for its intricate latticework and 953 small windows designed to allow cool breezes.",
+      image:
+        "https://media.istockphoto.com/id/482557081/photo/hawa-mahal-jaipur-india.jpg?s=612x612&w=0&k=20&c=A6qCUjoNH74nXCkB07RNgK3eIt2mun8PgsLPw9dNkVI=",
+    },
+    {
+      name: "Amber Fort",
+      description: "Majestic hilltop fortress with stunning views of the surrounding hills, featuring large courtyards and a mirror palace.",
+      image:
+        "https://media.istockphoto.com/id/469788052/photo/amer-fort-near-jaipur.jpg?s=612x612&w=0&k=20&c=Rsd9v_Ix39ce8U9QKo3UnWfEMG1DUq4hnzh3APPi3g8=",
+    },
+    {
+      name: "City Palace",
+      description: "Grand royal residence with courtyards, museums, and beautifully decorated gates.",
+      image:
+        "https://media.istockphoto.com/id/1744747131/photo/city-palace-jaipur-india.jpg?s=612x612&w=0&k=20&c=c9wj394FaZJyDw15IuzwHjzWDnExPik5zTvXGCaBOmY=",
+    },
+  ],
+  Chandigarh: [
+    {
+      name: "Rock Garden",
+      description: "Unique sculpture park created from industrial and domestic waste, showcasing creativity and eco-friendly art.",
+      image:
+        "https://media.istockphoto.com/id/1407956379/photo/corner-of-ornamental-stony-garden.jpg?s=612x612&w=0&k=20&c=AmYgLOr2BgasewJE8lf_9gBKoM9qu0DqkQQ6yrafD6I=",
+    },
+    {
+      name: "Sukhna Lake",
+      description: "Artificial reservoir surrounded by walking paths and gardens, a popular spot for boating and relaxation.",
+      image:
+        "https://media.istockphoto.com/id/1203392697/photo/sukhna-lake-chandigarh-at-sunrise.jpg?s=612x612&w=0&k=20&c=rabpQw7KhWTbYm3W9dndtERzvAYAjqVhEM4eJBRGrRQ=",
+    },
+  ],
+  Manali: [
+    {
+      name: "Rohtang Pass",
+      description: "Scenic mountain pass located at 3,978 meters, offering breathtaking views of the Himalayas.",
+      image:
+        "https://media.istockphoto.com/id/1442248596/photo/lahaul-valley-in-himalayas.jpg?s=612x612&w=0&k=20&c=5zTO8ChI2EXwKjrj4PFPJ3oKV93ydlyjDCymxzjlYZI=",
+    },
+    {
+      name: "Hadimba Temple",
+      description: "Ancient temple dedicated to Hadimba Devi, known for its unique wooden architecture.",
+      image:
+        "https://media.istockphoto.com/id/1334792935/photo/hidimba-devi-or-hadimba-temple.jpg?s=612x612&w=0&k=20&c=zE3wvq8_V9tAfsRiG_6rcg8zv8K3czbyI2J5vUAuQa8=",
+    },
+  ],
+};
+
+
 export const luxuryCars = [
   {
     type: "Audi A6",

@@ -15,12 +15,15 @@ import {
 } from "lucide-react";
 import { cityDetails } from "../../../utils/data";
 import CabSelection from "../cities/cabSelectionCities";
-import TouristSpots from "../cities/touristSpots"
+import TouristSpots from "../cities/touristSpots";
+import TouristSpotsModal from "../details/touristSpotsModal";
 
 const CitiesSectionDetails = ({ city, onClose }) => {
   const [selectedVehicle, setSelectedVehicle] = useState(null);
   const [showOptions, setShowOptions] = useState(false);
   const [passengers, setPassengers] = useState(1);
+  const [showTouristModal, setShowTouristModal] = useState(false);
+
   const details = cityDetails[city.name] || cityDetails.Delhi;
 
   const calculatePrice = () => {
@@ -182,6 +185,12 @@ const CitiesSectionDetails = ({ city, onClose }) => {
             * Prices and availability may vary
           </div>
           <div className="flex items-center gap-1 md:gap-2">
+          <button
+          className="bg-blue-400 flex gap-1 items-center px-2 text-xs md:px-4 py-1.5 md:text-sm rounded-lg hover:bg-blue-500"
+          onClick={() => setShowTouristModal(true)}
+        >
+          View More
+        </button>
             <button className="bg-yellow-400 flex gap-1 items-center px-2 text-xs md:px-4 py-1.5 md:text-sm rounded-lg hover:bg-yellow-500">
               <Phone className="md:w-4 md:h-4 w-3 h-3" /> Book Now
             </button>
@@ -194,6 +203,12 @@ const CitiesSectionDetails = ({ city, onClose }) => {
           </div>
         </div>
       </div>
+      {showTouristModal && (
+        <TouristSpotsModal
+          cityName={city.name}
+          onClose={() => setShowTouristModal(false)}
+        />
+      )}
     </div>
   );
 };
