@@ -2,8 +2,12 @@ import React from "react";
 import { X, LocateIcon } from "lucide-react";
 import { touristSpotsDescrition } from "../../../utils/data";
 import VehicleServices from "../VehicleServices";
+import { useLocation } from "react-router-dom";
 
-const TouristSpotsModal = ({ cityName, onClose }) => {
+const TouristSpotsModal = () => {
+  const location = useLocation();
+  const { cityName, cityDetails } = location.state || {}; 
+  
   const citySpots = touristSpotsDescrition[cityName] || [];
 
   return (
@@ -12,15 +16,8 @@ const TouristSpotsModal = ({ cityName, onClose }) => {
     >
       <div className="bg-white rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto shadow-lg animate-fadeIn">
         {/* Header */}
-        <div className="sticky top-0 bg-white border-b px-6 py-3 flex justify-between items-center">
-          <h2 className="text-xl font-bold">{cityName} - Tourist Spots</h2>
-          <button
-            onClick={onClose}
-            className="p-2 hover:bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-400"
-            aria-label="Close modal"
-          >
-            <X className="w-6 h-6" />
-          </button>
+        <div className="sticky top-0 bg-white border-b px-6 py-3 flex justify-center items-center shadow-md">
+          <h2 className="text-xl font-bold text-center">{cityName} - Tourist Spots</h2>
         </div>
 
         {/* Content */}

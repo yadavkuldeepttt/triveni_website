@@ -17,6 +17,7 @@ import { cityDetails } from "../../../utils/data";
 import CabSelection from "../cities/cabSelectionCities";
 import TouristSpots from "../cities/touristSpots";
 import TouristSpotsModal from "../details/touristSpotsModal";
+import { useNavigate } from "react-router-dom";
 
 const CitiesSectionDetails = ({ city, onClose }) => {
   const [selectedVehicle, setSelectedVehicle] = useState(null);
@@ -39,6 +40,12 @@ const CitiesSectionDetails = ({ city, onClose }) => {
   };
 
   const price = calculatePrice();
+
+  const navigate = useNavigate();
+
+      const handleViewMore = () => {
+        navigate("/tourist-spots", { state: { cityName: city.name, cityDetails: details } });
+      };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
@@ -187,7 +194,7 @@ const CitiesSectionDetails = ({ city, onClose }) => {
           <div className="flex items-center gap-1 md:gap-2">
           <button
           className="bg-blue-400 flex gap-1 items-center px-2 text-xs md:px-4 py-1.5 md:text-sm rounded-lg hover:bg-blue-500"
-          onClick={() => setShowTouristModal(true)}
+          onClick={()=> handleViewMore()}
         >
           View More
         </button>
@@ -203,12 +210,6 @@ const CitiesSectionDetails = ({ city, onClose }) => {
           </div>
         </div>
       </div>
-      {showTouristModal && (
-        <TouristSpotsModal
-          cityName={city.name}
-          onClose={() => setShowTouristModal(false)}
-        />
-      )}
     </div>
   );
 };
