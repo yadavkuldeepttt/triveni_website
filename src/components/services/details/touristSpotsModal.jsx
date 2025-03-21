@@ -11,12 +11,13 @@ const TouristSpotsModal = () => {
   const citySpots = touristSpotsDescrition[cityName] || [];
 
   return (
+   
     <div
-      className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 transition-opacity duration-300 ease-in-out"
+      className="h-full w-full  bg-black bg-opacity-50 z-50 items-center justify-center transition-opacity duration-300 ease-in-out"
     >
-      <div className="bg-white rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto shadow-lg animate-fadeIn">
+      <div className="bg-white rounded-4xl max-w-full max-h-full overflow-y-auto shadow-lg animate-fadeIn">
         {/* Header */}
-        <div className="sticky top-0 bg-white border-b px-6 py-3 flex justify-center items-center shadow-md">
+        <div className="top-0 bg-white border-b px-6 py-3 flex justify-center items-center shadow-md">
           <h2 className="text-xl font-bold text-center">{cityName} - Tourist Spots</h2>
         </div>
 
