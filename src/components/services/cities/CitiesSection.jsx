@@ -8,13 +8,12 @@ import {
   ChevronLeft
 } from "lucide-react";
 import { cities } from "../../../utils/data";
-import LocationSectionDetails from "../details/citiesSectionDetails";
+import { Link } from "react-router";
 
 const CitiesSection = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
-  const [selectedCity, setSelectedCity] = useState(null);
   const itemsPerPage = 4;
 
   const regions = [...new Set(cities.map((city) => city.region))];
@@ -38,7 +37,6 @@ const CitiesSection = () => {
   const handlePageChange = (event, page) => {
     event.preventDefault();
     setCurrentPage(page);
-    // window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -96,50 +94,40 @@ const CitiesSection = () => {
           </p>
         </div>
 
-        {/* City Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {/* City Grid - REDESIGNED */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {displayedCities.map((city) => (
-            <div
-              onClick={() => setSelectedCity(city)}
+            <Link
               key={city.name}
-              className={`relative bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1
-                         ${
-                           city.popularity === "high"
-                             ? "border-2 border-yellow-400"
-                             : ""
-                         }`}
+              to={`/${city.name.toLowerCase()}`}
+              className="group"
             >
-              <div className="flex items-start justify-between">
-                <div>
-                  <h3 className="text-xl font-bold mb-2">{city.name}</h3>
-                  <p className="text-gray-600 text-sm mb-4">{city.coverage}</p>
+              <div className="relative bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-2 border-transparent hover:border-yellow-400 overflow-hidden">
+                {/* Card Header */}
+                <div className="px-6 py-4 border-b">
+                  <h3 className="text-2xl font-bold mb-1">{city.name}</h3>
+                  <p className="text-gray-600 text-sm">{city.coverage}</p>
                 </div>
-                <MapPin
-                  className={`w-6 h-6 ${
-                    city.popularity === "high"
-                      ? "text-yellow-400"
-                      : "text-gray-400"
-                  }`}
-                />
+                
+                {/* Card Footer */}
+                <div className="px-6 py-3 flex justify-between items-center">
+                  <div className="flex items-center">
+                    <Car className="w-5 h-5 text-yellow-500 mr-2" />
+                    <span className="text-gray-600 text-sm">24/7</span>
+                  </div>
+                  <div className="flex items-center text-black group-hover:text-yellow-600 transition-colors font-medium">
+                    <span className="mr-1">Book Now</span>
+                  </div>
+                </div>
+                
+                {/* Popular Badge */}
+                {city.popularity === "high" && (
+                  <div className="absolute top-2 right-2 bg-yellow-400 text-xs font-bold px-2 py-1 rounded-full">
+                    Popular
+                  </div>
+                )}
               </div>
-
-              <div className="flex items-center gap-4 mt-4">
-                <div className="flex items-center text-sm text-gray-600">
-                  <Car className="w-4 h-4 mr-1" />
-                  <span>24/7</span>
-                </div>
-                <button className="flex items-center text-sm font-medium text-black hover:text-yellow-600 transition-colors">
-                  <Phone className="w-4 h-4 mr-1" />
-                  Book Now
-                </button>
-              </div>
-
-              {city.popularity === "high" && (
-                <div className="absolute -top-2 -right-2 bg-yellow-400 text-xs font-bold px-2 py-1 rounded-full">
-                  Popular
-                </div>
-              )}
-            </div>
+            </Link>
           ))}
         </div>
 
@@ -192,19 +180,12 @@ const CitiesSection = () => {
 
         {/* Call to Action */}
         <div className="mt-16 text-center">
-          <button className="bg-black text-white px-8 py-3 rounded-xl hover:bg-yellow-400 hover:text-black transition-all duration-300 flex items-center gap-2 mx-auto">
+          <Link to="/check-availability" className="inline-flex items-center bg-black text-white px-8 py-3 rounded-xl hover:bg-yellow-400 hover:text-black transition-all duration-300 gap-2">
             Check Availability
             <ChevronRight className="w-4 h-4" />
-          </button>
+          </Link>
         </div>
       </div>
-      {/* selected city modal */}
-      {selectedCity && (
-        <LocationSectionDetails
-          city={selectedCity}
-          onClose={() => setSelectedCity(null)}
-        />
-      )}
     </section>
   );
 };
