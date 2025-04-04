@@ -16,6 +16,7 @@ import VehicleDetails from "./components/services/details/vehicleServicesDetails
 import RentalCars from "./components/trip/carRent/carRent.jsx";
 import TourGuidePage from "./pages/tourGuidePage.jsx";
 import CityServicePage from "./components/services/cities/CityServicePage .jsx";
+import TouristSpotsModal from "./components/services/details/touristSpotsModal.jsx";
 
 class App extends Component {
   render() {
