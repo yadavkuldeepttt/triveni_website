@@ -15,8 +15,8 @@ import WhatsAppFloat from "./components/whatsappFloat.jsx"
 import VehicleDetails from "./components/services/details/vehicleServicesDetails.jsx";
 import RentalCars from "./components/trip/carRent/carRent.jsx";
 import TourGuidePage from "./pages/tourGuidePage.jsx";
+import CityServicePage from "./components/services/cities/CityServicePage .jsx";
 import TouristSpotsModal from "./components/services/details/touristSpotsModal.jsx";
-
 
 class App extends Component {
   render() {
@@ -34,6 +34,8 @@ class App extends Component {
             <Route path="/tour-guide" element={<TourGuidePage />} />
             <Route path="/tourist-spots" element={<TouristSpotsModal />} />
             
+           
+            <Route path="/:cityName" element={<CityServicePage />} />
             
             <Route
               path="/tour-package/:slug"
@@ -47,7 +49,7 @@ class App extends Component {
             />
           </Routes>
         </div>
-              <WhatsAppFloat phoneNumber="7668570551" />
+        <WhatsAppFloat phoneNumber="7668570551" />
         <Footer />
       </div>
     );
