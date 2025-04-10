@@ -60,12 +60,22 @@ const CityRoutes = ({ cityName }) => {
                   ))}
                 </div>
                 
-                <button 
-                  onClick={handleCallNow}
-                  className="w-full flex items-center justify-center gap-2 bg-black hover:bg-yellow-400 hover:text-black text-white py-3 px-4 rounded-md transition-colors font-medium"
-                >
-                  <span>BOOK NOW</span>
-                </button>
+                <div className="grid grid-cols-2 gap-3">
+                  <button 
+                    onClick={handleCallNow}
+                    className="flex items-center justify-center gap-2 bg-black hover:bg-yellow-400 hover:text-black text-white py-3 px-4 rounded-md transition-colors font-medium"
+                  >
+                    <span>BOOK NOW</span>
+                  </button>
+                  
+                  <button 
+                    onClick={handleCallNow}
+                    className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white py-3 px-4 rounded-md transition-colors font-medium"
+                  >
+                    <Phone className="h-5 w-5" />
+                    <span>CALL NOW</span>
+                  </button>
+                </div>
               </div>
             </div>
           ))}
